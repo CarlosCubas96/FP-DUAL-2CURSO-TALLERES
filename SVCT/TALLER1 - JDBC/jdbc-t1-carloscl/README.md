@@ -87,6 +87,7 @@ La clase ConnectionDB es responsable de administrar la conexión a una base de d
 En resumen, la clase facilita el acceso y manipulación de la base de datos a través de métodos encapsulados y reutilizables.
 
 ```java
+
 /**
 	 * Inicializa el DataSource con los parámetros necesarios para la conexión a la
 	 * base de datos.
