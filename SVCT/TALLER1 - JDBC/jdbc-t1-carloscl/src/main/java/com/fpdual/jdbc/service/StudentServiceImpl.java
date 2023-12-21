@@ -35,7 +35,7 @@ public class StudentServiceImpl implements StudentServiceI {
 			ConnectionDB.openConnection();
 
 			// Ejecuta la consulta SQL para obtener todos los estudiantes
-			try (ResultSet rs = ConnectionDB.query("SELECT * FROM FPD_NTTDATA_STUDENT")) {
+			try (ResultSet rs = ConnectionDB.query("SELECT * FROM FPD_STUDENT")) {
 				while (rs.next()) {
 					Student student = new Student();
 					student.setId(rs.getLong("ID"));
@@ -70,7 +70,7 @@ public class StudentServiceImpl implements StudentServiceI {
 		ResultSet rs = null;
 		Student student = null;
 
-		String selectQuery = "SELECT * FROM FPD_NTTDATA_STUDENT WHERE ID = ?";
+		String selectQuery = "SELECT * FROM FPD_STUDENT WHERE ID = ?";
 		PreparedStatement ps = ConnectionDB.prepareState(selectQuery);
 
 		try {
@@ -108,7 +108,7 @@ public class StudentServiceImpl implements StudentServiceI {
 		Boolean ok = Boolean.FALSE;
 
 		ConnectionDB.openConnection();
-		String insertQuery = "INSERT INTO FPD_NTTDATA_STUDENT (NAME, LAST_NAME, ADDRESS, PHONE, EMAIL) VALUES (?, ?, ?, ?, ?)";
+		String insertQuery = "INSERT INTO FPD_STUDENT (NAME, LAST_NAME, ADDRESS, PHONE, EMAIL) VALUES (?, ?, ?, ?, ?)";
 		PreparedStatement ps = ConnectionDB.prepareState(insertQuery);
 
 		try {
@@ -145,7 +145,7 @@ public class StudentServiceImpl implements StudentServiceI {
 		Boolean ok = Boolean.FALSE;
 
 		ConnectionDB.openConnection();
-		String updateQuery = "UPDATE FPD_NTTDATA_STUDENT SET NAME = ?, LAST_NAME = ?, ADDRESS = ?, PHONE = ?, EMAIL = ? WHERE ID = ?";
+		String updateQuery = "UPDATE FPD_STUDENT SET NAME = ?, LAST_NAME = ?, ADDRESS = ?, PHONE = ?, EMAIL = ? WHERE ID = ?";
 		PreparedStatement ps = ConnectionDB.prepareState(updateQuery);
 
 		try {
@@ -183,7 +183,7 @@ public class StudentServiceImpl implements StudentServiceI {
 		Boolean ok = Boolean.FALSE;
 
 		ConnectionDB.openConnection();
-		String deleteQuery = "DELETE FROM FPD_NTTDATA_STUDENT WHERE ID = ?";
+		String deleteQuery = "DELETE FROM FPD_STUDENT WHERE ID = ?";
 		PreparedStatement ps = ConnectionDB.prepareState(deleteQuery);
 
 		try {
@@ -217,7 +217,7 @@ public class StudentServiceImpl implements StudentServiceI {
 			ConnectionDB.openConnection();
 
 			// Elimina todos los estudiantes existentes en la base de datos.
-			String deleteSql = "DELETE FROM FPD_NTTDATA_STUDENT";
+			String deleteSql = "DELETE FROM FPD_STUDENT";
 			PreparedStatement deleteStatement = ConnectionDB.prepareState(deleteSql);
 
 			// Verifica si deleteStatement no es nulo antes de ejecutar la eliminación
@@ -225,7 +225,7 @@ public class StudentServiceImpl implements StudentServiceI {
 				deleteStatement.executeUpdate();
 
 				// Reinicia el valor AUTO_INCREMENT a 1.
-				String resetAutoIncrementSql = "ALTER TABLE FPD_NTTDATA_STUDENT AUTO_INCREMENT = 1";
+				String resetAutoIncrementSql = "ALTER TABLE FPD_STUDENT AUTO_INCREMENT = 1";
 				PreparedStatement resetAutoIncrementStatement = ConnectionDB.prepareState(resetAutoIncrementSql);
 
 				// Verifica si resetAutoIncrementStatement no es nulo antes de ejecutar la

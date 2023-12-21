@@ -20,7 +20,7 @@ public class Constants {
 	/**
 	 * URL de la base de datos.
 	 */
-	public static final String NAME_DB = "jdbc:mysql://127.0.0.1:3306/NTTDATA_FPDUAL_MYSQL_T4";
+	public static final String NAME_DB = "jdbc:mysql://127.0.0.1:3306/FPDUAL_MYSQL_T4";
 
 	/**
 	 * Nombre de usuario de la base de datos.

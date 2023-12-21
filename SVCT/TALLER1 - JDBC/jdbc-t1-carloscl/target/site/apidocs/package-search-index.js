@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.fpdual.jdbc"},{"l":"com.fpdual.jdbc.dbm"},{"l":"com.fpdual.jdbc.model"},{"l":"com.fpdual.jdbc.service"}];updateSearchResults();
