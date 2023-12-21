@@ -32,8 +32,10 @@ Este proyecto tiene como objetivo establecer una conexión a una base de datos (
 
 ## Ejecución
 
- 1. Ejecución de Scripts en el Gestor de Base de Datos
-[!NOTE]
+ **1. Ejecución de Scripts en el Gestor de Base de Datos**
+    
+> [!NOTE]
+> Se utiliza una BD en la carpeta **SQL**
 
 ```sql
 
@@ -65,12 +67,26 @@ ALTER TABLE FPD_STUDENT AUTO_INCREMENT = 1;
 
 ```
 
-2. Creación del Proyecto Maven
+**2. Creación del Proyecto Maven**
 
-3. Código Fuente
+Creamos un proyecto maven con estas caracteristicas:
 
-En este caso lo henos realizado con datasource donde creado un inizializador 
+```xml
+  <!-- DETALLES DEL PROYECTO -->
+	<groupId>com.fpdual</groupId>
+	<artifactId>jdbc-t1-carloscl</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>jdbc-t1-carloscl</name>
+	<description>PROYECTO - JDBC - TALLER 1</description>
+```
 
+
+**3. Código Fuente**
+
+La clase ConnectionDB es responsable de administrar la conexión a una base de datos mediante JDBC y un DataSource. Sus funciones principales incluyen la inicialización del DataSource, la gestión de la conexión y transacciones, la ejecución de consultas SQL y la preparación de declaraciones. Utiliza la librería **org.apache.commons.dbcp2** para la administración eficiente de conexiones.
+En resumen, la clase facilita el acceso y manipulación de la base de datos a través de métodos encapsulados y reutilizables.
+
+```java
 /**
 	 * Inicializa el DataSource con los parámetros necesarios para la conexión a la
 	 * base de datos.
@@ -102,13 +118,41 @@ En este caso lo henos realizado con datasource donde creado un inizializador
 		// Se asigna el DataSource a la variable estática
 		dataSource = basicDataSource;
 	}
+```
+
+Primero se ha creado una clase Conexion.db donde obtiene los metodos.
+Uno de los metodos requeridos es un método privado que llamado desde app hacia ConnectionDB:
+
+> [!NOTE]
+> Donde pregunta si la conexion es nula y manda un mensaje al log escribiendo por consola el nombre del **pool**.
+
+```xml
+	/**
+	 * Verifica la conexión a la base de datos
+	 */
+	public static void establishConnection() {
+		Utils.log(Utils.INFO, "Abriendo la conexión e inicializando el DataSource...");
+		if (connection != null) {
+			Utils.log(Utils.INFO, "Conexión exitosa: " + connection);
+		} else {
+			Utils.log(Utils.ERROR, "No se pudo establecer la conexión a la base de datos.");
+		}
+	}
+```
 
 
-Primero se ha  creado una clase Conexion.db donde obtiene los metodos donde es luego enbevida por ek servicio de Estudiantes
+
 
 ## Depedencias del proyecto 
 
--- 
+Dependencias utilizadas para el proyecto
+
+- *Dependencias del log SLF4J Y LOGBACK*
+- *Depedencia de Apache Commons para utilidades básicas*
+- *Dependecia de MYSQL  JDBC CONNECTOR y realizar la conexión con una base de datos envebida*
+- *Dependencia de Faker para introducir en la Aplicación datos ficticios*
+
+```xml
 <!-- DEPENDENCIAS -->
 	<dependencies>
 		<!-- Dependencias del Log -->
@@ -152,8 +196,7 @@ Primero se ha  creado una clase Conexion.db donde obtiene los metodos donde es l
 		</dependency>
 
 	</dependencies>
-
-
+```
 
 
 
