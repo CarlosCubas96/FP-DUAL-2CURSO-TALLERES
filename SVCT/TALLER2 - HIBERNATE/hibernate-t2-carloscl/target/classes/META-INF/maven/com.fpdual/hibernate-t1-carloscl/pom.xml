@@ -7,13 +7,14 @@
 
 	<!-- DETALLES DEL PROYECTO -->
 	<groupId>com.fpdual</groupId>
-	<artifactId>jdbc-t1-carloscl</artifactId>
+	<artifactId>hibernate-t1-carloscl</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>jdbc-t1-carloscl</name>
-	<description>PROYECTO - JDBC - TALLER 1</description>
+	<name>hibernate-t1-carloscl</name>
+	<description>PROYECTO - HIBERNATE - TALLER 2</description>
 
 	<!-- VERSIONES -->
 	<properties>
+
 		<!-- Codificacion de caracteres -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -24,10 +25,12 @@
 		<!-- Version Maven -->
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
+
 	</properties>
 
 	<!-- DEPENDENCIAS -->
 	<dependencies>
+
 		<!-- Dependencias del Log -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -47,18 +50,11 @@
 			<version>${logback.version}</version>
 		</dependency>
 
-		<!-- Dependencia de Apache Commons DBCP2 -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-dbcp2</artifactId>
-			<version>2.9.0</version>
-		</dependency>
-
 		<!-- Dependencia de MySQL JDBC -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.28</version>
+			<version>8.0.23</version>
 		</dependency>
 
 		<!-- Dependencia de Faker -->
@@ -68,6 +64,27 @@
 			<version>1.0.2</version>
 		</dependency>
 
+		<!-- Dependencia de utilidades de Java -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.12.0</version>
+		</dependency>
+
+		<!-- Dependencia para Hibernate Core, el núcleo de Hibernate herramienta
+		ORM para Java -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.5.3.Final</version>
+		</dependency>
+
+		<!-- Dependencia para la API de validación de Java -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
+		</dependency>
 	</dependencies>
 
 	<!-- INFORMACIÓN DEL DESARROLADOR -->
@@ -141,3 +158,4 @@
 		</pluginManagement>
 	</build>
 </project>
+
