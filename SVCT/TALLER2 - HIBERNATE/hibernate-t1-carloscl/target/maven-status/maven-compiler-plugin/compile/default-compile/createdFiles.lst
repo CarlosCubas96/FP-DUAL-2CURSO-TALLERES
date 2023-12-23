@@ -1,0 +1,13 @@
+com\fpdual\hibernate\InitializeData.class
+com\fpdual\hibernate\persistence\CommonDaoI.class
+com\fpdual\hibernate\Utils.class
+com\fpdual\hibernate\HibernateUtil.class
+com\fpdual\hibernate\persistence\ClientDaoImpl.class
+com\fpdual\hibernate\persistence\AbstractEntity.class
+com\fpdual\hibernate\persistence\ClientDaoI.class
+com\fpdual\hibernate\App.class
+com\fpdual\hibernate\persistence\Client.class
+com\fpdual\hibernate\services\ClientManagementServiceImpl.class
+com\fpdual\hibernate\services\ClientManagementServiceI.class
+com\fpdual\hibernate\Constants.class
+com\fpdual\hibernate\persistence\CommonDaoImpl.class
