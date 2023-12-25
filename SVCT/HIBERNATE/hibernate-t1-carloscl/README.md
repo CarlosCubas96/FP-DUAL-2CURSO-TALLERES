@@ -1,4 +1,4 @@
-# Taller 1 Hibernate - Proyecto hibernate-t1-iniciales
+# Taller 1 Hibernate - Proyecto hibernate-t1-carloscl
 
 ## Descripción del Proyecto
 Este proyecto tiene como objetivo implementar un sistema web utilizando Hibernate para gestionar la entidad "Cliente". Se utilizará el patrón DAO para realizar operaciones CRUD en la base de datos, y se incluirá un servicio de gestión de clientes que consumirá el DAO correspondiente. Además, se implementará un método de búsqueda por nombres y apellidos en la entidad Cliente.
