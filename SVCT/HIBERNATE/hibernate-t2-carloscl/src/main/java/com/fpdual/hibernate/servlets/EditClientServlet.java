@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 
+import com.fpdual.hibernate.Constants;
 import com.fpdual.hibernate.HibernateUtil;
 import com.fpdual.hibernate.Utils;
 import com.fpdual.hibernate.persistence.Client;
@@ -77,7 +78,7 @@ public class EditClientServlet extends HttpServlet {
 					// Redirigir a la página de error si el cliente no existe
 					if (client == null) {
 						Utils.log(Utils.ERROR, "Cliente no encontrado con ID: " + clientId);
-						response.sendRedirect("JSP/error/error.jsp");
+						response.sendRedirect(Constants.JSP_ERROR_JSP);
 						return;
 					}
 
@@ -116,7 +117,7 @@ public class EditClientServlet extends HttpServlet {
 				}
 				// Redirigir a la página de error en caso de excepción
 				Utils.log(Utils.ERROR, "Error al procesar la solicitud GET: " + e);
-				response.sendRedirect("JSP/error/error.jsp");
+				response.sendRedirect(Constants.JSP_ERROR_JSP);
 			}
 		}
 	}
@@ -147,7 +148,7 @@ public class EditClientServlet extends HttpServlet {
 				transaction = session.beginTransaction();
 
 				// Obtener parámetros del formulario de actualización del cliente
-				String idParam = request.getParameter("clientId");
+				String idParam = request.getParameter(Constants.PARAM_CLIENT_ID);
 				long clientId = Long.parseLong(idParam);
 				String firstName = request.getParameter("firstName");
 				String lastName = request.getParameter("lastName");
@@ -196,12 +197,12 @@ public class EditClientServlet extends HttpServlet {
 						request.setAttribute("clients", clients);
 
 						// Redirigir a la página de listado de clientes
-						request.getRequestDispatcher("JSP/listClients.jsp").forward(request, response);
+						request.getRequestDispatcher(Constants.JSP_ERROR_JSP).forward(request, response);
 
 					} else {
 						// Redirigir a la página de error si la actualización falla
 						Utils.log(Utils.ERROR, "Error al actualizar el cliente con ID: " + clientId);
-						response.sendRedirect("JSP/error/error.jsp");
+						response.sendRedirect(Constants.JSP_ERROR_JSP);
 					}
 				} else {
 					// Redirigir a la página de error si los parámetros son nulos o vacíos
@@ -218,7 +219,7 @@ public class EditClientServlet extends HttpServlet {
 				}
 				// Redirigir a la página de error en caso de excepción
 				Utils.log(Utils.ERROR, "Error al procesar la solicitud POST: " + e);
-				response.sendRedirect("JSP/error/error.jsp");
+				response.sendRedirect(Constants.JSP_ERROR_JSP);
 			}
 		}
 	}

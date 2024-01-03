@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 
+import com.fpdual.hibernate.Constants;
 import com.fpdual.hibernate.HibernateUtil;
 import com.fpdual.hibernate.persistence.Client;
 import com.fpdual.hibernate.services.ClientManagementServiceImpl;
@@ -68,13 +69,13 @@ public class DeleteClientServlet extends HttpServlet {
 				transaction = session.beginTransaction();
 
 				// Obtenemos el cliente
-				String idParam = request.getParameter("clientId");
+				String idParam = request.getParameter(Constants.PARAM_CLIENT_ID);
 				if (idParam == null || idParam.isEmpty()) {
 
 					// Log de error y evita el bloque else, luego sale del método si el ID es nulo o
 					// vacío
 					Utils.log(Utils.ERROR, "Error al procesar la solicitud POST: ID de cliente nulo o vacío.");
-					response.sendRedirect("JSP/error/error.jsp");
+					response.sendRedirect(Constants.JSP_ERROR_JSP);
 					return;
 				}
 
@@ -114,7 +115,7 @@ public class DeleteClientServlet extends HttpServlet {
 
 					// Log de error y redirigir a la página de error
 					Utils.log(Utils.ERROR, "Error al procesar la solicitud POST: No se pudo eliminar el cliente.");
-					response.sendRedirect("JSP/error/error.jsp");
+					response.sendRedirect(Constants.JSP_ERROR_JSP);
 				}
 
 			} catch (Exception e) {
@@ -129,7 +130,7 @@ public class DeleteClientServlet extends HttpServlet {
 					transaction.rollback();
 				}
 				// Redirigir a la página de error en caso de excepción
-				response.sendRedirect("JSP/error/error.jsp");
+				response.sendRedirect(Constants.JSP_ERROR_JSP);
 			}
 		}
 	}

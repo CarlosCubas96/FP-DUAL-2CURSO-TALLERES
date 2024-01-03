@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 
+import com.fpdual.hibernate.Constants;
 import com.fpdual.hibernate.HibernateUtil;
 import com.fpdual.hibernate.Utils;
 import com.fpdual.hibernate.persistence.Client;
@@ -83,7 +84,7 @@ public class CreateContractServlet extends HttpServlet {
 					// Redirigir a la página de error si el cliente no existe
 					if (client == null) {
 						Utils.log(Utils.ERROR, "Cliente no encontrado con ID: " + clientId);
-						response.sendRedirect("JSP/error/error.jsp");
+						response.sendRedirect(Constants.JSP_ERROR_JSP);
 						return;
 					}
 
@@ -122,7 +123,7 @@ public class CreateContractServlet extends HttpServlet {
 				}
 				// Redirigir a la página de error en caso de excepción
 				Utils.log(Utils.ERROR, "Error al procesar la solicitud GET: " + e);
-				response.sendRedirect("JSP/error/error.jsp");
+				response.sendRedirect(Constants.JSP_ERROR_JSP);
 			}
 		}
 	}
@@ -156,7 +157,7 @@ public class CreateContractServlet extends HttpServlet {
 				transaction = session.beginTransaction();
 
 				// Obtener parámetros del formulario
-				long clientId = Long.parseLong(request.getParameter("clientId"));
+				long clientId = Long.parseLong(request.getParameter(Constants.PARAM_CLIENT_ID));
 
 				// Obtenemos el Cliente con el parametro
 				Client client = clientService.searchById(clientId);
@@ -215,7 +216,7 @@ public class CreateContractServlet extends HttpServlet {
 					Utils.log(Utils.ERROR, "Campos del formulario vacíos.");
 
 					// Redirigir a la página de error si los campos están vacíos
-					response.sendRedirect("JSP/error/error.jsp");
+					response.sendRedirect(Constants.JSP_ERROR_JSP);
 				}
 
 			} catch (Exception e) {
@@ -231,7 +232,7 @@ public class CreateContractServlet extends HttpServlet {
 				Utils.log(Utils.ERROR, "Error al procesar el formulario de creación de contratos. " + e);
 
 				// Redirigir a la página de error en caso de excepción
-				response.sendRedirect("JSP/error/error.jsp");
+				response.sendRedirect(Constants.JSP_ERROR_JSP);
 			}
 		}
 

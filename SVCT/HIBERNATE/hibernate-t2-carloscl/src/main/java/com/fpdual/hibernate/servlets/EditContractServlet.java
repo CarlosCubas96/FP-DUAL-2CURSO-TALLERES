@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 
+import com.fpdual.hibernate.Constants;
 import com.fpdual.hibernate.HibernateUtil;
 import com.fpdual.hibernate.Utils;
 import com.fpdual.hibernate.persistence.Client;
@@ -56,7 +57,7 @@ public class EditContractServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String contractIdParam = request.getParameter("contractId");
-		String clientIdParam = request.getParameter("clientId");
+		String clientIdParam = request.getParameter(Constants.PARAM_CLIENT_ID);
 
 		// Se Obtienen los parametros y verificamos
 		if (contractIdParam != null && clientIdParam != null) {
@@ -74,7 +75,7 @@ public class EditContractServlet extends HttpServlet {
 					Contract existingContract = contractService.searchById(contractId);
 
 					request.setAttribute("contract", existingContract);
-					request.setAttribute("clientId", clientId);
+					request.setAttribute(Constants.PARAM_CLIENT_ID, clientId);
 
 					// Redirigir al formulario de actualización del contrato
 					RequestDispatcher dispatcher = request.getRequestDispatcher("JSP/updateContract.jsp");
@@ -83,12 +84,12 @@ public class EditContractServlet extends HttpServlet {
 			} catch (NumberFormatException e) {
 
 				// Redirigir a la página de error si la actualización falla
-				response.sendRedirect("JSP/error/error.jsp");
+				response.sendRedirect(Constants.JSP_ERROR_JSP);
 			}
 		} else {
 
 			// Redirigir a la página de error si la actualización falla
-			response.sendRedirect("JSP/error/error.jsp");
+			response.sendRedirect(Constants.JSP_ERROR_JSP);
 		}
 	}
 
@@ -118,7 +119,7 @@ public class EditContractServlet extends HttpServlet {
 
 				// Obtenemos los parámetros del formulario
 				String contractIdParam = request.getParameter("contractId");
-				String clientIdParam = request.getParameter("clientId");
+				String clientIdParam = request.getParameter(Constants.PARAM_CLIENT_ID);
 				String startDateStr = request.getParameter("startDate");
 				String endDateStr = request.getParameter("endDate");
 				String monthlyPriceStr = request.getParameter("monthlyPrice");
@@ -185,12 +186,12 @@ public class EditContractServlet extends HttpServlet {
 					} else {
 						// Rollback en caso de falla en la actualización del contrato
 						Utils.log(Utils.ERROR, "Error al actualizar el contrato con ID: " + contractId);
-						response.sendRedirect("JSP/error/error.jsp");
+						response.sendRedirect(Constants.JSP_ERROR_JSP);
 					}
 				} else {
 					// Manejamos el caso en el que algunos parámetros son nulos o vacíos
 					Utils.log(Utils.ERROR, "Alguno de los parámetros es nulo o vacío.");
-					response.sendRedirect("JSP/error/error.jsp");
+					response.sendRedirect(Constants.JSP_ERROR_JSP);
 				}
 
 			} catch (Exception e) {
@@ -200,7 +201,7 @@ public class EditContractServlet extends HttpServlet {
 				}
 				// Redirigimos a la página de error en caso de excepción
 				Utils.log(Utils.ERROR, "Error al procesar la solicitud POST: " + e);
-				response.sendRedirect("JSP/error/error.jsp");
+				response.sendRedirect(Constants.JSP_ERROR_JSP);
 			}
 		}
 

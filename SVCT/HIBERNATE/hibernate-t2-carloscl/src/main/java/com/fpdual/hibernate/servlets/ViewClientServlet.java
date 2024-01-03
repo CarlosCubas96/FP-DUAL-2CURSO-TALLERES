@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 
+import com.fpdual.hibernate.Constants;
 import com.fpdual.hibernate.HibernateUtil;
 import com.fpdual.hibernate.Utils;
 import com.fpdual.hibernate.persistence.Client;
@@ -72,7 +73,7 @@ public class ViewClientServlet extends HttpServlet {
 				transaction = session.beginTransaction();
 
 				// Se obtiene el parámetro del ID del cliente de la solicitud.
-				String idParam = request.getParameter("clientId");
+				String idParam = request.getParameter(Constants.PARAM_CLIENT_ID);
 
 				// Log para registrar la solicitud de visualización de cliente
 				Utils.log(Utils.INFO, "Visualización de cliente solicitada con ID: " + idParam);
@@ -93,7 +94,7 @@ public class ViewClientServlet extends HttpServlet {
 						Utils.log(Utils.ERROR, "Cliente no encontrado con ID: " + idParam);
 
 						// Redirige a la página de error si el cliente no se encuentra.
-						response.sendRedirect("JSP/error/error.jsp");
+						response.sendRedirect(Constants.JSP_ERROR_JSP);
 						return;
 					}
 
@@ -108,10 +109,11 @@ public class ViewClientServlet extends HttpServlet {
 				} else {
 
 					// Log para registrar que el parámetro está vacío.
-					Utils.log(Utils.ERROR, "Parámetro 'clientId' vacío en la solicitud de visualización de cliente.");
+					Utils.log(Utils.ERROR, "Parámetro " + Constants.PARAM_CLIENT_ID
+							+ " vacío en la solicitud de visualización de cliente.");
 
 					// Redirige a la página de error si el parámetro está vacío.
-					response.sendRedirect("JSP/error/error.jsp");
+					response.sendRedirect(Constants.JSP_ERROR_JSP);
 				}
 
 				// Realizar el commit solo si no se produjo ninguna excepción.
@@ -143,7 +145,7 @@ public class ViewClientServlet extends HttpServlet {
 				Utils.log(Utils.ERROR, "Error al procesar la solicitud GET en ViewClientServlet: " + e);
 
 				// Redirigir a la página de error en caso de excepción
-				response.sendRedirect("JSP/error/error.jsp");
+				response.sendRedirect(Constants.JSP_ERROR_JSP);
 			}
 		}
 	}

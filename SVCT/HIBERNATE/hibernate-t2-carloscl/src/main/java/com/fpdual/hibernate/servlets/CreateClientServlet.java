@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 
+import com.fpdual.hibernate.Constants;
 import com.fpdual.hibernate.HibernateUtil;
 import com.fpdual.hibernate.Utils;
 import com.fpdual.hibernate.persistence.Client;
@@ -139,7 +140,7 @@ public class CreateClientServlet extends HttpServlet {
 						Utils.log(Utils.ERROR, "Campos del formulario vacíos.");
 
 						// Redirigir a la página de error si los campos están vacíos
-						response.sendRedirect("JSP/error/error.jsp");
+						response.sendRedirect(Constants.JSP_ERROR_JSP);
 
 					}
 
@@ -148,7 +149,7 @@ public class CreateClientServlet extends HttpServlet {
 					Utils.log(Utils.ERROR, "Campos del formulario vacíos.");
 
 					// Redirigir a la página de error si los campos están vacíos
-					response.sendRedirect("JSP/error/error.jsp");
+					response.sendRedirect(Constants.JSP_ERROR_JSP);
 				}
 
 			} catch (Exception e) {
@@ -164,7 +165,7 @@ public class CreateClientServlet extends HttpServlet {
 				Utils.log(Utils.ERROR, "Error al procesar el formulario de creación de clientes." + e);
 
 				// Redirigir a la página de error en caso de excepción
-				response.sendRedirect("JSP/error/error.jsp");
+				response.sendRedirect(Constants.JSP_ERROR_JSP);
 			}
 		}
 	}

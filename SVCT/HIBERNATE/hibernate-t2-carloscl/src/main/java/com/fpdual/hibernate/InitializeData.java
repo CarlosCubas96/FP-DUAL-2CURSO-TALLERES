@@ -36,7 +36,7 @@ public class InitializeData {
 	private final Faker faker;
 
 	/** Indica si se han generado clientes. */
-	private static boolean hasGeneratedClients;
+	private boolean hasGeneratedClients;
 
 	/**
 	 * Constructor de la clase InitializeData.

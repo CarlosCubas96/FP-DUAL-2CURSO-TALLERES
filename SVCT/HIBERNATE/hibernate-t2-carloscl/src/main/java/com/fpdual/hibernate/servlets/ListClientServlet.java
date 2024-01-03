@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import org.hibernate.Session;
 
+import com.fpdual.hibernate.Constants;
 import com.fpdual.hibernate.HibernateUtil;
 import com.fpdual.hibernate.InitializeData;
 import com.fpdual.hibernate.Utils;
@@ -83,7 +84,7 @@ public class ListClientServlet extends HttpServlet {
 			request.getRequestDispatcher("JSP/listClients.jsp").forward(request, response);
 		} catch (Exception e) {
 			Utils.log(Utils.ERROR, "Error al procesar la solicitud GET en ListClientServlet: " + e);
-			response.sendRedirect("JSP/error/error.jsp");
+			response.sendRedirect(Constants.JSP_ERROR_JSP);
 		}
 	}
 }

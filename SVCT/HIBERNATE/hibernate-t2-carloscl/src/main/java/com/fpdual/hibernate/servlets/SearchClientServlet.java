@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import com.fpdual.hibernate.Constants;
 import com.fpdual.hibernate.HibernateUtil;
 import com.fpdual.hibernate.Utils;
 import com.fpdual.hibernate.persistence.Client;
@@ -91,7 +92,7 @@ public class SearchClientServlet extends HttpServlet {
 		} catch (Exception e) {
 			// Log para registrar errores en la búsqueda
 			Utils.log(Utils.ERROR, "Error al procesar la solicitud GET en SearchClientServlet: " + e);
-			response.sendRedirect("JSP/error/error.jsp");
+			response.sendRedirect(Constants.JSP_ERROR_JSP);
 		}
 	}
 }

@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 
+import com.fpdual.hibernate.Constants;
 import com.fpdual.hibernate.HibernateUtil;
 import com.fpdual.hibernate.persistence.Contract;
 import com.fpdual.hibernate.services.ContractManagementServiceImpl;
@@ -75,7 +76,7 @@ public class DeleteContractServlet extends HttpServlet {
 					 * vacío
 					 */
 					Utils.log(Utils.ERROR, "Error al procesar la solicitud POST: ID de contrato nulo o vacío.");
-					response.sendRedirect("JSP/error/error.jsp");
+					response.sendRedirect(Constants.JSP_ERROR_JSP);
 					return;
 				}
 
@@ -116,7 +117,7 @@ public class DeleteContractServlet extends HttpServlet {
 
 					// Log de error y redirigir a la página de error
 					Utils.log(Utils.ERROR, "Error al procesar la solicitud POST: No se pudo eliminar el contrato.");
-					response.sendRedirect("JSP/error/error.jsp");
+					response.sendRedirect(Constants.JSP_ERROR_JSP);
 				}
 
 			} catch (Exception e) {
@@ -131,7 +132,7 @@ public class DeleteContractServlet extends HttpServlet {
 					transaction.rollback();
 				}
 				// Redirigir a la página de error en caso de excepción
-				response.sendRedirect("JSP/error/error.jsp");
+				response.sendRedirect(Constants.JSP_ERROR_JSP);
 			}
 		}
 	}
