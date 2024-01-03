@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+	<!-- Servlet Mapping for EditClientServlet -->
+	<servlet>
+		<servlet-name>EditClientServlet</servlet-name>
+		<servlet-class>com.fpdual.hibernate.servlets.EditClientServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditClientServlet</servlet-name>
+		<url-pattern>/EditClientServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Servlet Mapping for DeleteClientServlet -->
+	<servlet>
+		<servlet-name>DeleteClientServlet</servlet-name>
+		<servlet-class>com.fpdual.hibernate.servlets.DeleteClientServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteClientServlet</servlet-name>
+		<url-pattern>/DeleteClientServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Servlet Mapping for ListClientServlet -->
+	<servlet>
+		<servlet-name>ListClientServlet</servlet-name>
+		<servlet-class>com.fpdual.hibernate.servlets.ListClientServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListClientServlet</servlet-name>
+		<url-pattern>/ListClientServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Servlet Mapping for CreateClientServlet -->
+	<servlet>
+		<servlet-name>CreateClientServlet</servlet-name>
+		<servlet-class>com.fpdual.hibernate.servlets.CreateClientServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateClientServlet</servlet-name>
+		<url-pattern>/CreateClientServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Servlet Mapping for ViewClientServlet -->
+	<servlet>
+		<servlet-name>ViewClientServlet</servlet-name>
+		<servlet-class>com.fpdual.hibernate.servlets.ViewClientServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewClientServlet</servlet-name>
+		<url-pattern>/ViewClientServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Servlet Mapping for CreateContractServlet -->
+	<servlet>
+		<servlet-name>CreateContractServlet</servlet-name>
+		<servlet-class>com.fpdual.hibernate.servlets.CreateContractServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateContractServlet</servlet-name>
+		<url-pattern>/CreateContractServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Servlet Mapping for EditContractServlet -->
+	<servlet>
+		<servlet-name>EditContractServlet</servlet-name>
+		<servlet-class>com.fpdual.hibernate.servlets.EditContractServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditContractServlet</servlet-name>
+		<url-pattern>/EditContractServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Servlet Mapping for DeleteContractServlet -->
+	<servlet>
+		<servlet-name>DeleteContractServlet</servlet-name>
+		<servlet-class>com.fpdual.hibernate.servlets.DeleteContractServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteContractServlet</servlet-name>
+		<url-pattern>/DeleteContractServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Servlet Mapping for SearchClientServlet -->
+	<servlet>
+		<servlet-name>SearchClientServlet</servlet-name>
+		<servlet-class>com.fpdual.hibernate.servlets.SearchClientServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchClientServlet</servlet-name>
+		<url-pattern>/SearchClientServlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>

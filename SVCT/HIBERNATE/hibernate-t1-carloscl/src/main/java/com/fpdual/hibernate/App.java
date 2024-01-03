@@ -103,6 +103,11 @@ public class App {
 
 		// Fin de programa
 		Utils.log(Utils.INFO, "Cerrando la aplicación...");
+		
+		// Cerrar la sesión de Hibernate al finalizar
+	    if (session != null && session.isOpen()) {
+	        session.close();
+	    }
 	}
 
 	/**

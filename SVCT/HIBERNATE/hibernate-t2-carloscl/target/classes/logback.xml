@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+
+	<!-- VARIABLE FECHA ACTUAL -->
+	<timestamp key="logDate" datePattern="dd-MM-yyyy" />
+
+	<!-- APPENDER (CONSOLA) -->
+	<appender name="consoleAppender"
+		class="ch.qos.logback.core.ConsoleAppender">
+
+		<!-- FORMATO DE SALIDA DE LA TRAZA -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%cyan(Head) -> %thread] - [%cyan(Logger)
+				-> %yellow(%logger{36})] - [%cyan(Method) -> %method] -
+				[%cyan(Level) -> %highlight(%-5level)] - [%cyan(Message) ->
+				%highlight(%msg)] %n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- APPENDER (FICHERO APPENDER) -->
+	<appender name="fileAppender"
+		class="ch.qos.logback.core.FileAppender">
+
+		<!-- NOMBRE DEL FICHERO -->
+		<file>./logs/outPutFile-${logDate}.log</file>
+
+		<!-- EL FICHERO SE GENERA EN CADA EJECUCIÓN -->
+		<append>false</append>
+		<immediateFlush>true</immediateFlush>
+
+		<!-- FORMATO DE SALIDA -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-4level %logger{32} - [%method]
+				- %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- APPENDER (FICHERO ROLLING) -->
+	<appender name="fileRolling"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+		<!-- RUTA Y NOMBRE DEL FICHERO -->
+		<file>./logs/outPutFileRolling-${logDate}.log</file>
+
+		<!-- POLÍTICA DE TRATAMIENTO DEL FICHERO -->
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>./logs/outPutFileRolling-${logDate}.%i.logDual.zip
+			</fileNamePattern>
+
+			<!-- CANTIDAD DE FICHEROS POSIBLES -->
+			<minIndex>1</minIndex>
+			<maxIndex>3</maxIndex>
+		</rollingPolicy>
+
+		<!-- CADA CUÁNTO SALTA EL CORTE -->
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>10KB</maxFileSize>
+		</triggeringPolicy>
+
+		<!-- FORMATO DE SALIDA -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [(Head) -> %thread] - [(Logger) ->
+				(%logger{36})] - [(Method) -> %method] - [(Level) -> (%-5level)] -
+				[(Message) -> (%msg)] %n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- (ROOT) ASIGNACIÓN DE LOGGER AL APPENDER -->
+	<root level="debug">
+		<appender-ref ref="fileRolling" />
+		<appender-ref ref="consoleAppender" />
+		<appender-ref ref="fileAppender" />
+	</root>
+
+</configuration>

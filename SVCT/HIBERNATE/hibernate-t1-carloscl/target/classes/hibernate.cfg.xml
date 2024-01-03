@@ -5,7 +5,7 @@
 
 		<!-- Configuración de conexión a MySQL -->
 		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/FPDUAL_HIBERNATE_MYSQL_T2?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/FPDUAL_HIBERNATE_MYSQL_T1?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true</property>
 		<property name="hibernate.connection.username">sqladmin</property>
 		<property name="hibernate.connection.password">Elena12121234</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
