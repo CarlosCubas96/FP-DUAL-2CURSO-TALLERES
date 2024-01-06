@@ -169,47 +169,47 @@ En este proyecto, se han implementado varios Servlets para gestionar las operaci
 
 ### Servlets
 
-## EditClientServlet
+#### EditClientServlet
 - **Clase:** `com.fpdual.hibernate.servlets.EditClientServlet`
 - **URL:** `/EditClientServlet`
 - **Descripción:** Este servlet maneja las solicitudes para editar la información de un cliente. Al acceder a la URL `/EditClientServlet`, el usuario puede actualizar los datos de un cliente existente.
 
-## DeleteClientServlet
+#### DeleteClientServlet
 - **Clase:** `com.fpdual.hibernate.servlets.DeleteClientServlet`
 - **URL:** `/DeleteClientServlet`
 - **Descripción:** Este servlet gestiona las solicitudes para eliminar un cliente de la base de datos. Al acceder a la URL `/DeleteClientServlet`, se elimina el cliente seleccionado.
 
-## ListClientServlet
+#### ListClientServlet
 - **Clase:** `com.fpdual.hibernate.servlets.ListClientServlet`
 - **URL:** `/ListClientServlet`
 - **Descripción:** Este servlet maneja las solicitudes para obtener la lista de todos los clientes almacenados en la base de datos. Al acceder a la URL `/ListClientServlet`, se muestra una lista de clientes.
 
-## CreateClientServlet
+#### CreateClientServlet
 - **Clase:** `com.fpdual.hibernate.servlets.CreateClientServlet`
 - **URL:** `/CreateClientServlet`
 - **Descripción:** Este servlet gestiona las solicitudes para crear un nuevo cliente en la base de datos. Al acceder a la URL `/CreateClientServlet`, se presenta un formulario para ingresar los detalles del nuevo cliente.
 
-## ViewClientServlet
+#### ViewClientServlet
 - **Clase:** `com.fpdual.hibernate.servlets.ViewClientServlet`
 - **URL:** `/ViewClientServlet`
 - **Descripción:** Este servlet maneja las solicitudes para ver los detalles de un cliente específico. Al acceder a la URL `/ViewClientServlet`, se muestra la información detallada de un cliente.
 
-## CreateContractServlet
+#### CreateContractServlet
 - **Clase:** `com.fpdual.hibernate.servlets.CreateContractServlet`
 - **URL:** `/CreateContractServlet`
 - **Descripción:** Este servlet gestiona las solicitudes para crear un nuevo contrato asociado a un cliente. Al acceder a la URL `/CreateContractServlet`, se presenta un formulario para ingresar los detalles del nuevo contrato.
 
-## EditContractServlet
+#### EditContractServlet
 - **Clase:** `com.fpdual.hibernate.servlets.EditContractServlet`
 - **URL:** `/EditContractServlet`
 - **Descripción:** Este servlet maneja las solicitudes para editar la información de un contrato existente. Al acceder a la URL `/EditContractServlet`, el usuario puede actualizar los datos de un contrato.
 
-## DeleteContractServlet
+#### DeleteContractServlet
 - **Clase:** `com.fpdual.hibernate.servlets.DeleteContractServlet`
 - **URL:** `/DeleteContractServlet`
 - **Descripción:** Este servlet gestiona las solicitudes para eliminar un contrato asociado a un cliente. Al acceder a la URL `/DeleteContractServlet`, se elimina el contrato seleccionado.
 
-## SearchClientServlet
+#### SearchClientServlet
 - **Clase:** `com.fpdual.hibernate.servlets.SearchClientServlet`
 - **URL:** `/SearchClientServlet`
 - **Descripción:** Este servlet permite buscar clientes por nombre y apellidos. Al acceder a la URL `/SearchClientServlet`, se presenta un formulario de búsqueda y se muestran los resultados correspondientes.
@@ -217,168 +217,39 @@ En este proyecto, se han implementado varios Servlets para gestionar las operaci
 
 ### Páginas JSP Implementadas
 
-## createClient.jsp
+#### createClient.jsp
 - **Ubicación:** `/webapp/WEB-INF/views/createClient.jsp`
 - **Descripción:** Página que contiene un formulario para crear un nuevo cliente. Se accede mediante la acción del Servlet `CreateClientServlet`.
 
-## createContract.jsp
+#### createContract.jsp
 - **Ubicación:** `/webapp/WEB-INF/views/createContract.jsp`
 - **Descripción:** Página que presenta un formulario para crear un nuevo contrato asociado a un cliente. Se accede mediante la acción del Servlet `CreateContractServlet`.
 
-## listClients.jsp
+#### listClients.jsp
 - **Ubicación:** `/webapp/WEB-INF/views/listClients.jsp`
 - **Descripción:** Página que muestra una lista de todos los clientes almacenados en la base de datos. Se accede mediante la acción del Servlet `ListClientServlet`.
 
-## updateClient.jsp
+#### updateClient.jsp
 - **Ubicación:** `/webapp/WEB-INF/views/updateClient.jsp`
 - **Descripción:** Página que permite actualizar la información de un cliente existente. Se accede mediante la acción del Servlet `EditClientServlet`.
 
-### updateContract.jsp
+#### updateContract.jsp
 - **Ubicación:** `/webapp/WEB-INF/views/updateContract.jsp`
 - **Descripción:** Página que permite actualizar la información de un contrato existente. Se accede mediante la acción del Servlet `EditContractServlet`.
 
-### viewClient.jsp
+#### viewClient.jsp
 - **Ubicación:** `/webapp/WEB-INF/views/viewClient.jsp`
 - **Descripción:** Página que muestra los detalles de un cliente específico. Se accede mediante la acción del Servlet `ViewClientServlet`.
   
-### error.jsp
+#### error.jsp
 - **Ubicación:** `/webapp/WEB-INF/view/error/error.jsp`
 - **Descripción:** Página de manejo de errores que se utiliza para redirigir en caso de fallos en las operaciones.
 
-
-## 4. Implementacion de JSP y Servlets
-
-Se ha llevado a cabo la implementacion en las páginas JSP y Servlets para las interfaces e implementaciones de los DAO y servicios.
-
-### Servlets
-
-Se han implementado los Servlets para incorporar llamadas a los nuevos métodos de los servicios que consumen las consultas. A continuación, se presenta de cómo se realiza esta integración en los Servlet:
-
-### SearchClientServlet.java
-
-```java
-// ... (código previo)
-
-@WebServlet("/SearchClientServlet")
-public class SearchClientServlet extends HttpServlet {
-
-    // ... (métodos y atributos previos)
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-
-            // Obtener el parámetro de búsqueda del formulario
-            String searchKeyword = request.getParameter("searchKeyword");
-
-            // Realizar la búsqueda en el servicio de gestión de clientes
-            ClientManagementServiceImpl clientService = new ClientManagementServiceImpl(session);
-            List<Client> searchResults = clientService.searchByName(searchKeyword);
-
-            // Guardar los resultados en el request
-            request.setAttribute("clients", searchResults);
-
-            // Log para registrar la búsqueda realizada
-            Utils.log(Utils.INFO, "Búsqueda realizada por nombre: " + searchKeyword);
-
-            // Redirigir a la página de lista de clientes con los resultados de la búsqueda
-            request.getRequestDispatcher("JSP/listClients.jsp").forward(request, response);
-
-        } catch (Exception e) {
-            // Log para registrar errores en la búsqueda
-            Utils.log(Utils.ERROR, "Error al procesar la solicitud GET en SearchClientServlet: " + e);
-            response.sendRedirect(Constants.JSP_ERROR_JSP);
-        }
-    }
-}
-
-```
-
-### SearchContractServlet.java
-
-```java
-// ... (código previo)
-
-@WebServlet("/SearchContractServlet")
-public class SearchContractServlet extends HttpServlet {
-
-    // ... (métodos y atributos previos)
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        // Obtener la sesión
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-
-            // Crear una instancia del servicio de contratos
-            ContractManagementServiceImpl contractService = new ContractManagementServiceImpl(session);
-
-            // Obtener el parámetro DNI de la solicitud
-            String searchDNI = request.getParameter("searchDNI");
-
-            // Buscar contratos por DNI
-            List<Contract> contracts = contractService.searchContractByClientIdentityDocument(searchDNI);
-
-            // Establecer los contratos como atributo en la solicitud
-            request.setAttribute("contracts", contracts);
-
-            // Redirigir a la página JSP de contratos
-            request.getRequestDispatcher("JSP/listContracts.jsp").forward(request, response);
-
-        } catch (Exception e) {
-            Utils.log(Utils.ERROR, "Error al procesar la solicitud GET en SearchContractServlet: " + e);
-            response.sendRedirect(Constants.JSP_ERROR_JSP);
-        }
-    }
-}
-
-```
-
-### JSP
-Las páginas JSP han sido implementadas para mostrar los resultados de las nuevas consultas JPA Criteria. A continuación, se muestran los fragmentos de código que presentan las listas obtenidas:
-
-- Se implementa el formulario para la busqueda de clientes por nombre o apellidos retornando los clientes obtenidos
-
-```jsp
-
-<!-- Formulario de búsqueda -->
-<form action="SearchClientServlet" method="get" class="mb-3">
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search by name, lastname or secondname"
-            name="searchKeyword">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
-        </div>
-    </div>
-</form>
-
-```
-- Se implementa el formulario para la busqueda de contratos por id de cliente
-
-```jsp
-<!-- Formulario de búsqueda por DNI -->
-<form action="SearchContractServlet" method="get" class="mb-3">
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search by ID"
-            name="searchDNI">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
-        </div>
-    </div>
-</form>
-
-```
-
-
-
-### 5. Implementación de los métodos de los servicios Cliente y Contrato
+**5. Implementación de los métodos de los servicios Cliente y Contrato**
 
 ### Cliente
 
-Este método **searchByNameAndLastName** busca clientes por su nombre y apellidos, permitiendo la búsqueda con flexibilidad. Se utiliza una consulta HQL (Hibernate Query Language) que incluye parámetros opcionales para los campos de nombre, primer apellido y segundo apellido. El método realiza la consulta, registra información detallada sobre la operación en los logs y devuelve la lista de clientes encontrados.
+Este método **searchByNameAndLastName** busca clientes por su nombre y apellidos, permitiendo la búsqueda con flexibilidad. Se utiliza una consulta HQL que incluye parámetros opcionales para los campos de nombre, primer apellido y segundo apellido. El método realiza la consulta, registra información detallada sobre la operación en los logs y devuelve la lista de clientes encontrados.
 
 ```java
 /**
@@ -464,7 +335,7 @@ public List<Contract> searchContractByClientId(Long clientId) {
 
 ```
 
-### 6. Ejecución del Proyecto
+**6. Ejecución del Proyecto**
 
 Asegúrate de seguir estos pasos para desplegar el proyecto en un contenedor web como Apache Tomcat:
 
