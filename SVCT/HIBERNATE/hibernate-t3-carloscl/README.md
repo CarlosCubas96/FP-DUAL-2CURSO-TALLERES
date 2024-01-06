@@ -1,25 +1,26 @@
-# Taller 2 Hibernate - Proyecto hibernate-t2-carloscl
+# Taller 3 Hibernate - Proyecto hibernate-t3-carloscl
 
 ## Descripción del Proyecto
-Este proyecto web es una adaptación del ejercicio del taller 1, incorporando una nueva entidad llamada Contrato. La relación entre Cliente y Contrato es de 1:N, lo que significa que un cliente puede tener de cero a varios contratos, y un contrato está asociado a un único cliente. Los atributos de la entidad Contrato incluyen un identificador numérico, fecha de vigencia, fecha de caducidad, precio mensual y la relación con Cliente. Además, se implementa el patrón DAO para gestionar las operaciones CRUD y un método de búsqueda por identificador del Cliente en la entidad Contrato.
+Este proyecto web es una adaptación del taller 2 de Hibernate, incorporando dos consultas definidas e implementadas con JPA Criteria. Las entidades Cliente y Contrato han sido actualizadas en sus interfaces e implementaciones de DAO para incorporar estas consultas utilizando JPA Criteria.
 
 ## Evaluación
 
 ### Se evaluará:
+
 - **Generación del Proyecto:**
   - Asegurar que el proyecto se genere correctamente con el nombre adecuado.
 
-- **Uso de Dependencias y Librerías:**
-  - Incluir las dependencias necesarias en el archivo `pom.xml` para Hibernate y otras funcionalidades.
+- **Adaptación de Interfaces e Implementaciones:**
+  - Adecuada adaptación de las interfaces e implementaciones de DAO para incorporar las consultas con JPA Criteria en las entidades Cliente y Contrato.
 
-- **Implementación del DAO:**
-  - Crear un DAO para la entidad Cliente con métodos CRUD y un método de búsqueda por nombres y apellidos.
+- **Consultas JPA Criteria:**
+  - Implementación correcta de las consultas definidas con JPA Criteria en los DAO de Cliente y Contrato.
+  
+- **Actualización de Servicios:**
+  - Actualización de las interfaces e implementaciones de los servicios asociados para consumir los nuevos métodos en los DAO.
 
-- **Servicio de Gestión de Clientes:**
-  - Crear un servicio que consuma el DAO de la entidad Cliente y utilice todos los métodos implementados.
-    
-- **Servicio de Gestión de Contratos:**
-  - Crear un servicio que consuma el DAO de la entidad Contrato y utilice todos los métodos implementados.
+- **Consumo de Nuevos Métodos:**
+  - Correcto consumo de los nuevos métodos en los servicios desde otras partes de la aplicación.
 
 - **Iniciativa y Creatividad:**
   - Mostrar iniciativa y creatividad al incorporar funcionalidades no solicitadas que mejoren el proyecto.
@@ -35,14 +36,11 @@ Este proyecto web es una adaptación del ejercicio del taller 1, incorporando un
 ### Creación del Proyecto Maven
 2. Crear un proyecto Apache Maven utilizando el nombre adecuado para el proyecto.
 
-### Configuración de Hibernate
-3. Configurar Hibernate mediante anotaciones JPA en la entidad Cliente. Puede realizarse mediante el uso de un archivo `hibernate.cfg.xml` o, en caso de utilizar Spring Boot, a través de `application.properties`.
+### Actualización de Interfaces e Implementaciones de DAO y Servicios
+3. Actualizar la interfaces, implementaciones y servicios para incorporar los nuevos métodos definidos con JPA Criteria para las entidades.
 
-### Implementación de JSP y Servlets
-4. Implementa páginas JSP y Servlets para interactuar con los servicios de gestión de Clientes y Contratos. Puedes utilizar estas páginas para probar todas las operaciones.
-
-### Ejecución del Proyecto
-5. Despliega tu proyecto en un contenedor web como Apache Tomcat.
+### Actualización de JSP y Servlets
+4. Actualizar el jsp para la comprobación de los metodos.
 
 ## Ejecución
 
@@ -55,17 +53,17 @@ Se añade la tabla de contratos
 
 ```sql
 -- Autor       : Carlos Cubas Lorca
--- Descripción : Taller 2 HIBERNATE BD MySQL - FP DUAL
+-- Descripción : Taller 3 HIBERNATE BD MySQL - FP DUAL
 ------------------------------------------------------
 
 -- Eliminación de la base de datos si existe.
-DROP DATABASE IF EXISTS FPDUAL_HIBERNATE_MYSQL_T2;
+DROP DATABASE IF EXISTS FPDUAL_HIBERNATE_MYSQL_T3;
 
 -- Creación de la base de datos.
-CREATE DATABASE FPDUAL_HIBERNATE_MYSQL_T2 DEFAULT CHARACTER SET UTF8MB4;
+CREATE DATABASE FPDUAL_HIBERNATE_MYSQL_T3 DEFAULT CHARACTER SET UTF8MB4;
 
 -- Uso de la base de datos.
-USE FPDUAL_HIBERNATE_MYSQL_T2;
+USE FPDUAL_HIBERNATE_MYSQL_T3;
 
 -- Creación de tabla para Clientes.
 CREATE TABLE FPDUAL_HEX_CLIENT (
@@ -100,178 +98,322 @@ Creamos un proyecto maven con estas características:
 
  	<!-- DETALLES DEL PROYECTO -->
 	<groupId>com.fpdual</groupId>
-	<artifactId>hibernate-t2-carloscl</artifactId>
+	<artifactId>hibernate-t3-carloscl</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hibernate-t2-carloscl Maven Webapp</name>
-	<description>PROYECTO - HIBERNATE - TALLER 2</description>
+	<name>hibernate-t3-carloscl</name>
+	<description>PROYECTO - HIBERNATE - TALLER 3</description>
 
 ```
 
-**3. Configuración de Hibernate**
+**3. Actualización de Interfaces e Implementaciones de DAO y Servicios**
 
-Configuramos Hibernate utilizando anotaciones JPA en la entidad Cliente y, si es necesario, mediante el archivo hibernate.cfg.xml:
+Se ha realizado una adecuada adaptación en la interfaz e implementación del DAO de la entidad Cliente para incorporar una nueva consulta utilizando JPA Criteria. A continuación, se presenta el código correspondiente:
 
-- **Configuración de conexión a MySQL:**
-Establece los parámetros de conexión a MySQL, incluyendo la URL, el controlador de la base de datos, y las credenciales del usuario.
+## Cliente  
+Se ha realizado una adecuada adaptación en la interfaz e implementación del DAO de la entidad Cliente para incorporar una nueva consulta utilizando JPA Criteria. A continuación, se presenta el código correspondiente:
 
-```xml
 
-		<!-- Configuración de conexión a MySQL -->
-		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/FPDUAL_HIBERNATE_MYSQL_T2?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true</property>
-		<property name="hibernate.connection.username">sqladmin</property>
-		<property name="hibernate.connection.password">Elena12121234</property>
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+```java
 
+/**
+	 * Busca clientes por nombre.
+	 * 
+	 * @param firstName El nombre del cliente.
+	 * @return Lista de clientes que coinciden con el nombre dado.
+	 */
+	@Override
+	public List<Client> searchByName(String firstName) {
+
+		// Verificación de sesión abierta.
+		if (!session.getTransaction().isActive()) {
+			session.getTransaction().begin();
+		}
+
+		// Creación del CriteriaBuilder
+		CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+
+		// Creación del CriteriaQuery para Client
+		CriteriaQuery<Client> criteriaQuery = criteriaBuilder.createQuery(Client.class);
+		Root<Client> clientRoot = criteriaQuery.from(Client.class);
+
+		// Agregar condición para hacer coincidir el primer nombre
+		Predicate condition = criteriaBuilder.equal(clientRoot.get("firstName"), firstName);
+		criteriaQuery.where(condition);
+
+		// Realizar la consulta
+		List<Client> clients = session.createQuery(criteriaQuery).getResultList();
+
+		// Registro
+		Utils.log(Utils.INFO, "Realizando consulta para buscar clientes por nombre.");
+		Utils.log(Utils.INFO, "Número de clientes encontrados: " + clients.size());
+
+		// Confirmar la transacción
+		session.getTransaction().commit();
+
+		return clients;
+	}
 ```
 
-- **Configuración adicional:**
-Incluye propiedades adicionales para Hibernate, como mostrar y formatear SQL.
+### Contrato
+Se ha implementado una consulta adicional en la interfaz e implementación del DAO de la entidad Contrato, utilizando JPA Criteria para buscar contratos por el DNI del cliente asociado. A continuación, se presenta el código correspondiente:
 
-```xml
+  ```java
+  /**
+	 * Busca contratos por el DNI del cliente asociado utilizando JPA Criteria.
+	 *
+	 * @param identityDocument El DNI del cliente.
+	 * @return Una lista de contratos asociados con el DNI de cliente especificado.
+	 */
+	@Override
+	public List<Contract> searchContractByClientIdentityDocument(String identityDocument) {
 
-		<!-- Configuración adicional -->
-		<property name="hibernate.show_sql">true</property>
-		<property name="hibernate.format_sql">true</property>
+		// Verificación de sesión abierta.
+		if (!session.getTransaction().isActive()) {
+			session.getTransaction().begin();
+		}
 
-```
+		// Creación del CriteriaBuilder para Contract
+		CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
 
-- **Configuración del pool de conexiones:**
-Define parámetros para el pool de conexiones c3p0, especificando el tamaño mínimo y máximo, el tiempo de espera, el número máximo de declaraciones y el período de inactividad.
+		// Creación del CriteriaQuery
+		CriteriaQuery<Contract> criteriaQuery = criteriaBuilder.createQuery(Contract.class);
+		Root<Contract> contractRoot = criteriaQuery.from(Contract.class);
 
-```xml
-		<!-- Configuración del pool de conexiones (opcional) -->
-		<property name="hibernate.c3p0.min_size">5</property>
-		<property name="hibernate.c3p0.max_size">20</property>
-		<property name="hibernate.c3p0.timeout">300</property>
-		<property name="hibernate.c3p0.max_statements">50</property>
-		<property name="hibernate.c3p0.idle_test_period">3000</property>
-```
+		// Unión con la entidad Client
+		Join<Contract, Client> clientJoin = contractRoot.join("client");
 
-- **Mapeo de clases:**
-Indica el mapeo de la clase Client en el archivo de configuración de Hibernate.
+		// Agregar condición para hacer coincidir el DNI del cliente
+		Predicate condition = criteriaBuilder.equal(clientJoin.get("identityDocument"), identityDocument);
+		criteriaQuery.where(condition);
 
+		// Realizar la consulta
+		List<Contract> contracts = session.createQuery(criteriaQuery).getResultList();
 
-```xml
-			<!-- Mapeos de clases -->
-		<mapping class="com.fpdual.hibernate.persistence.Client" />
-		<mapping class="com.fpdual.hibernate.persistence.Contract" />
+		// Registros
+		Utils.log(Utils.INFO, "Realizando consulta para buscar contratos por DNI del cliente.");
+		Utils.log(Utils.INFO, "Número de contratos encontrados: " + contracts.size());
+
+		// Confirmar la transacción
+		session.getTransaction().commit();
+
+		return contracts;
+	}
 
   ```
 
-**4. Implementación de JSP y Servlets**
 
-En este proyecto, se han implementado varios Servlets para gestionar las operaciones relacionadas con las entidades Cliente y Contrato. A continuación, se proporciona una breve descripción de cada Servlet:
+**4. Actualización de JSP y Servlets**
 
-### Servlets
+Se ha llevado a cabo una actualización en las páginas JSP y Servlets para reflejar los cambios realizados en las interfaces e implementaciones de los DAO y servicios. Estas modificaciones permitirán una integración fluida con las nuevas consultas JPA Criteria implementadas en las entidades Cliente y Contrato.
 
-## EditClientServlet
-- **Clase:** `com.fpdual.hibernate.servlets.EditClientServlet`
-- **URL:** `/EditClientServlet`
-- **Descripción:** Este servlet maneja las solicitudes para editar la información de un cliente. Al acceder a la URL `/EditClientServlet`, el usuario puede actualizar los datos de un cliente existente.
+### Cambios en Servlets
+Se han actualizado los Servlets para incorporar llamadas a los nuevos métodos de los servicios que consumen las consultas JPA Criteria. A continuación, se presenta de cómo se realiza esta integración en los Servlet:
 
-## DeleteClientServlet
-- **Clase:** `com.fpdual.hibernate.servlets.DeleteClientServlet`
-- **URL:** `/DeleteClientServlet`
-- **Descripción:** Este servlet gestiona las solicitudes para eliminar un cliente de la base de datos. Al acceder a la URL `/DeleteClientServlet`, se elimina el cliente seleccionado.
+- **SearchClientServlet**
 
-## ListClientServlet
-- **Clase:** `com.fpdual.hibernate.servlets.ListClientServlet`
-- **URL:** `/ListClientServlet`
-- **Descripción:** Este servlet maneja las solicitudes para obtener la lista de todos los clientes almacenados en la base de datos. Al acceder a la URL `/ListClientServlet`, se muestra una lista de clientes.
+```java
+package com.fpdual.hibernate.servlets;
 
-## CreateClientServlet
-- **Clase:** `com.fpdual.hibernate.servlets.CreateClientServlet`
-- **URL:** `/CreateClientServlet`
-- **Descripción:** Este servlet gestiona las solicitudes para crear un nuevo cliente en la base de datos. Al acceder a la URL `/CreateClientServlet`, se presenta un formulario para ingresar los detalles del nuevo cliente.
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-## ViewClientServlet
-- **Clase:** `com.fpdual.hibernate.servlets.ViewClientServlet`
-- **URL:** `/ViewClientServlet`
-- **Descripción:** Este servlet maneja las solicitudes para ver los detalles de un cliente específico. Al acceder a la URL `/ViewClientServlet`, se muestra la información detallada de un cliente.
+import com.fpdual.hibernate.Constants;
+import com.fpdual.hibernate.HibernateUtil;
+import com.fpdual.hibernate.Utils;
+import com.fpdual.hibernate.persistence.Client;
+import com.fpdual.hibernate.services.ClientManagementServiceImpl;
 
-## CreateContractServlet
-- **Clase:** `com.fpdual.hibernate.servlets.CreateContractServlet`
-- **URL:** `/CreateContractServlet`
-- **Descripción:** Este servlet gestiona las solicitudes para crear un nuevo contrato asociado a un cliente. Al acceder a la URL `/CreateContractServlet`, se presenta un formulario para ingresar los detalles del nuevo contrato.
+import java.io.IOException;
+import java.util.List;
 
-## EditContractServlet
-- **Clase:** `com.fpdual.hibernate.servlets.EditContractServlet`
-- **URL:** `/EditContractServlet`
-- **Descripción:** Este servlet maneja las solicitudes para editar la información de un contrato existente. Al acceder a la URL `/EditContractServlet`, el usuario puede actualizar los datos de un contrato.
+import org.hibernate.Session;
 
-## DeleteContractServlet
-- **Clase:** `com.fpdual.hibernate.servlets.DeleteContractServlet`
-- **URL:** `/DeleteContractServlet`
-- **Descripción:** Este servlet gestiona las solicitudes para eliminar un contrato asociado a un cliente. Al acceder a la URL `/DeleteContractServlet`, se elimina el contrato seleccionado.
+/**
+ * 
+ * FPDUAL - HIBERNATE - Taller3
+ * 
+ * Servlet para buscar clientes. Este servlet maneja las solicitudes para buscar
+ * clientes por nombre. Utiliza el método doGet para procesar las solicitudes
+ * GET.
+ * 
+ * @author Carlos
+ */
+public class SearchClientServlet extends HttpServlet {
 
-## SearchClientServlet
-- **Clase:** `com.fpdual.hibernate.servlets.SearchClientServlet`
-- **URL:** `/SearchClientServlet`
-- **Descripción:** Este servlet permite buscar clientes por nombre y apellidos. Al acceder a la URL `/SearchClientServlet`, se presenta un formulario de búsqueda y se muestran los resultados correspondientes.
+	/** Serial Version */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Constructor por defecto.
+	 */
+	public SearchClientServlet() {
+		super();
+	}
+
+	/**
+	 * Maneja las solicitudes GET para buscar clientes por nombre.
+	 * 
+	 * @param request  La solicitud HTTP recibida.
+	 * @param response La respuesta HTTP que se enviará.
+	 * @throws ServletException Si ocurre un error durante el procesamiento de la
+	 *                          solicitud.
+	 * @throws IOException      Si ocurre un error de entrada/salida durante el
+	 *                          procesamiento de la solicitud.
+	 */
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
+			// Obtener el parámetro de búsqueda del formulario
+			String searchKeyword = request.getParameter("searchKeyword");
+
+			// Realizar la búsqueda en el servicio de gestión de clientes
+			ClientManagementServiceImpl clientService = new ClientManagementServiceImpl(session);
+			List<Client> searchResults = clientService.searchByName(searchKeyword);
+
+			// Guardar los resultados en el request
+			request.setAttribute("clients", searchResults);
+
+			// Log para registrar la búsqueda realizada
+			Utils.log(Utils.INFO, "Búsqueda realizada por nombre: " + searchKeyword);
+
+			// Redirigir a la página de lista de clientes con los resultados de la búsqueda
+			request.getRequestDispatcher("JSP/listClients.jsp").forward(request, response);
+
+		} catch (Exception e) {
+			// Log para registrar errores en la búsqueda
+			Utils.log(Utils.ERROR, "Error al procesar la solicitud GET en SearchClientServlet: " + e);
+			response.sendRedirect(Constants.JSP_ERROR_JSP);
+		}
+	}
+}
+
+```
+
+- **SearchContractServlet**
+
+```java
+
+package com.fpdual.hibernate.servlets;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import org.hibernate.Session;
+
+import com.fpdual.hibernate.Constants;
+import com.fpdual.hibernate.HibernateUtil;
+import com.fpdual.hibernate.Utils;
+import com.fpdual.hibernate.services.ContractManagementServiceImpl;
+import com.fpdual.hibernate.persistence.Contract;
+
+import java.io.IOException;
+import java.util.List;
+
+/**
+ * FPDUAL - HIBERNATE - Taller3
+ * 
+ * Servlet para buscar contratos por DNI del cliente. Maneja solicitudes GET.
+ * 
+ * @author Carlos
+ */
+public class SearchContractServlet extends HttpServlet {
+
+	/** Serial Version */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Constructor por defecto.
+	 */
+	public SearchContractServlet() {
+		super();
+	}
+
+	/**
+	 * Maneja solicitudes GET para buscar contratos por DNI del cliente.
+	 * 
+	 * @param request  La solicitud HTTP recibida.
+	 * @param response La respuesta HTTP que se enviará.
+	 * @throws ServletException Si ocurre un error durante el procesamiento de la
+	 *                          solicitud.
+	 * @throws IOException      Si ocurre un error de entrada/salida durante el
+	 *                          procesamiento de la solicitud.
+	 */
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// Obtener la sesión
+		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
+			// Crear una instancia del servicio de contratos
+			ContractManagementServiceImpl contractService = new ContractManagementServiceImpl(session);
+
+			// Obtener el parámetro DNI de la solicitud
+			String searchDNI = request.getParameter("searchDNI");
+
+			// Buscar contratos por DNI
+			List<Contract> contracts = contractService.searchContractByClientIdentityDocument(searchDNI);
+
+			// Establecer los contratos como atributo en la solicitud
+			request.setAttribute("contracts", contracts);
+
+			// Redirigir a la página JSP de contratos
+			request.getRequestDispatcher("JSP/listContracts.jsp").forward(request, response);
+
+		} catch (Exception e) {
+			Utils.log(Utils.ERROR, "Error al procesar la solicitud GET en SearchContractServlet: " + e);
+			response.sendRedirect(Constants.JSP_ERROR_JSP);
+		}
+	}
+}
+
+```
 
 
-### Páginas JSP Implementadas
+### Cambios en JSP
+Las páginas JSP también han sido actualizadas para mostrar los resultados de las nuevas consultas JPA Criteria. A continuación, se muestran  los fragmentos de código que presenta las listas obtenidas:
 
-## createClient.jsp
-- **Ubicación:** `/webapp/WEB-INF/views/createClient.jsp`
-- **Descripción:** Página que contiene un formulario para crear un nuevo cliente. Se accede mediante la acción del Servlet `CreateClientServlet`.
+Se ha añadido el formulario de busqueda para lisClients para obtener los clientes por basados por nombres retornando la lista actualizada
 
-## createContract.jsp
-- **Ubicación:** `/webapp/WEB-INF/views/createContract.jsp`
-- **Descripción:** Página que presenta un formulario para crear un nuevo contrato asociado a un cliente. Se accede mediante la acción del Servlet `CreateContractServlet`.
+```jsp
 
-## listClients.jsp
-- **Ubicación:** `/webapp/WEB-INF/views/listClients.jsp`
-- **Descripción:** Página que muestra una lista de todos los clientes almacenados en la base de datos. Se accede mediante la acción del Servlet `ListClientServlet`.
+	<!-- Formulario de búsqueda -->
+		<form action="SearchClientServlet" method="get" class="mb-3">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Search by name"
+					name="searchKeyword">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="submit">Search</button>
+				</div>
+			</div>
+		</form>
 
-## updateClient.jsp
-- **Ubicación:** `/webapp/WEB-INF/views/updateClient.jsp`
-- **Descripción:** Página que permite actualizar la información de un cliente existente. Se accede mediante la acción del Servlet `EditClientServlet`.
+```
 
-### updateContract.jsp
-- **Ubicación:** `/webapp/WEB-INF/views/updateContract.jsp`
-- **Descripción:** Página que permite actualizar la información de un contrato existente. Se accede mediante la acción del Servlet `EditContractServlet`.
+Se ha añadido el formulario de busqueda para lisContracts para obtener los controtatos por DNI del cliente obtenidos
 
-### viewClient.jsp
-- **Ubicación:** `/webapp/WEB-INF/views/viewClient.jsp`
-- **Descripción:** Página que muestra los detalles de un cliente específico. Se accede mediante la acción del Servlet `ViewClientServlet`.
-  
-### error.jsp
-- **Ubicación:** `/webapp/WEB-INF/view/error/error.jsp`
-- **Descripción:** Página de manejo de errores que se utiliza para redirigir en caso de fallos en las operaciones.
+```jsp
 
+<!-- Formulario de búsqueda por DNI -->
+		<form action="SearchContractServlet" method="get" class="mb-3">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Search by DNI"
+					name="searchDNI">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="submit">Search</button>
+				</div>
+			</div>
+		</form>
 
-### 5. Ejecución del Proyecto
-
-Asegúrate de seguir estos pasos para desplegar el proyecto en un contenedor web como Apache Tomcat:
-
-1. **Configuración de Apache Tomcat:**
-   - Asegúrarse de tener Apache Tomcat instalado y configurado correctamente en el entorno de desarrollo. Descargar la última versión de Apache Tomcat desde [el sitio oficial de Apache Tomcat](https://tomcat.apache.org/).
-
-2. **Configuración del Proyecto:**
-   - Verificar las dependencias y configuraciones del proyecto, Hibernate y las dependencias en el archivo `pom.xml`.
-
-3. **Compilación y Empaquetado:**
-   - Ejecutar el siguiente comando Maven para compilar y empaquetar el proyecto:
-     ```
-     mvn clean package
-     ```
-     Este comando compilará el proyecto y generará un archivo WAR en el directorio `target` del proyecto.
-
-4. **Despliegue en Apache Tomcat:**
-   - Copiar el archivo WAR desde el directorio `target` al directorio `webapps` de la instalación de Apache Tomcat.
-
-5. **Inicio de Apache Tomcat:**
-   - Iniciar Apache Tomcat.
-
-6. **Acceso a la Aplicación:**
-   - Una vez iniciado Apache Tomcat, abre tu navegador web y accede a la aplicación utilizando la URL correspondiente. Por ejemplo, `http://localhost:8080/mi-proyecto`.
-
-7. **Prueba de Funcionalidades:**
-   - Interactúa con las páginas JSP y Servlets implementadas para gestionar clientes y contratos. Asegúrarse de probar todas las operaciones para garantizar el correcto funcionamiento de la aplicación.
-
+```
 
 ### Dependencias del Proyecto
 
@@ -376,18 +518,9 @@ En este proyecto se han utilizado las siguientes dependencias:
 
 ### Errores y Soluciones con Hibernate y JSP
 
-Eerrores encontrados durante la implementación de Hibernate y JSP en la aplicación, así como las soluciones correspondientes.
+Errores encontrados durante la implementación de Hibernate y JSP en la aplicación, así como las soluciones correspondientes.
 
-## Error 1: Configuración Incorrecta de Hibernate
-Durante la configuración de Hibernate, se encontraron problemas. Se corrigió la configuración ajustando las propiedades en el archivo `hibernate.cfg.xml`. Asegurándose de que...
-
-## Error 2: Problema con la Etiqueta `<c:forEach>` en JSP
-Al utilizar la etiqueta `<c:forEach>` en las páginas JSP, se encontró un error. La solución consistió en ajustar la sintaxis o importar las bibliotecas adecuadas para la etiqueta `<c:forEach>`.
-
-## Error 3: Mensajes de Error en Servlets
-Los servlets presentaron mensajes de error específicos. Se identificaron y corrigieron los problemas en los servlets, incluyendo ajustes en la lógica de negocio, manejo de excepciones y redirecciones adecuadas.
-
-## Error 4: Interacción entre JSP y Servlets
+## Error 1: Interacción entre JSP y Servlets
 Se encontraron problemas al pasar datos entre las páginas JSP y los servlets. Se ajustaron los métodos de envío y recepción entre JSP y servlets, asegurándose de utilizar los atributos correctos y manejar adecuadamente los parámetros.
 
  
