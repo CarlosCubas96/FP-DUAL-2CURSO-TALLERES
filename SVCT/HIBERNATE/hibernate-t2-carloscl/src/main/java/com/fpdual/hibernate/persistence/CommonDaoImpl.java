@@ -8,8 +8,10 @@ import org.hibernate.Session;
 import com.fpdual.hibernate.Utils;
 
 /**
- * FPDUAL - HIBERNATE - Taller1 Implementación genérica de DAO para operaciones
- * comunes de CRUD en la base de datos.
+ * FPDUAL - HIBERNATE - Taller2
+ * 
+ * Implementación genérica de DAO para operaciones comunes de CRUD en la base de
+ * datos.
  * 
  * @param <T> Tipo de entidad para la operación CRUD.
  * @author Carlos

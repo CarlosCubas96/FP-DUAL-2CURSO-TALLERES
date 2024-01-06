@@ -5,7 +5,7 @@ import java.util.List;
 import com.fpdual.hibernate.persistence.Client;
 
 /**
- * FPDUAL - HIBERNATE - Taller1
+ * FPDUAL - HIBERNATE - Taller2
  * 
  * Interfaz para el servicio de gestión de clientes. Proporciona métodos para
  * realizar operaciones CRUD y búsquedas relacionadas con clientes.

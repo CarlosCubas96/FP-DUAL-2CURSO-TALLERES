@@ -7,6 +7,18 @@ import org.hibernate.query.Query;
 
 import com.fpdual.hibernate.Utils;
 
+/**
+ * 
+ * FPDUAL - HIBERNATE - Taller2
+ * 
+ * Implementación de la interfaz ContractDaoI que proporciona métodos para
+ * acceder y manipular datos relacionados con contratos en la base de datos.
+ * 
+ * Extiende la clase CommonDaoImpl para reutilizar funcionalidades comunes.
+ * 
+ * @author Carlos
+ * 
+ */
 public class ContractDaoImpl extends CommonDaoImpl<Contract> implements ContractDaoI {
 
 	/** Sesión de conexión a BD */

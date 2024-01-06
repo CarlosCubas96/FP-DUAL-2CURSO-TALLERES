@@ -19,6 +19,7 @@ public interface ContractManagementServiceI {
 	 * Inserta un nuevo contrato.
 	 * 
 	 * @param newContract El nuevo contrato a insertar.
+	 * @return `true` si la inserción fue exitosa, `false` en caso contrario.
 	 */
 	public Boolean insertNewContract(Contract newContract);
 
@@ -26,7 +27,7 @@ public interface ContractManagementServiceI {
 	 * Actualiza un contrato existente.
 	 * 
 	 * @param updatedContract El contrato actualizado.
-	 * @return
+	 * @return `true` si la actualización fue exitosa, `false` en caso contrario.
 	 */
 	public Boolean updateContract(Contract updatedContract);
 
@@ -34,6 +35,7 @@ public interface ContractManagementServiceI {
 	 * Elimina un contrato existente.
 	 * 
 	 * @param deletedContract El contrato a eliminar.
+	 * @return `true` si la eliminación fue exitosa, `false` en caso contrario.
 	 */
 	public Boolean deleteContract(Contract deletedContract);
 
@@ -41,7 +43,7 @@ public interface ContractManagementServiceI {
 	 * Obtiene un contrato mediante su ID.
 	 * 
 	 * @param contractId El ID del contrato a buscar.
-	 * @return El contrato encontrado, o null si no se encuentra.
+	 * @return El contrato encontrado, o `null` si no se encuentra.
 	 */
 	public Contract searchById(Long contractId);
 

@@ -3,7 +3,7 @@ package com.fpdual.hibernate.persistence;
 import java.util.List;
 
 /**
- * FPDUAL - HIBERNATE - Taller1
+ * FPDUAL - HIBERNATE - Taller2
  * 
  * Interfaz genérica para operaciones CRUD en la base de datos. Define métodos
  * comunes para insertar, actualizar, eliminar y buscar por ID o todos los

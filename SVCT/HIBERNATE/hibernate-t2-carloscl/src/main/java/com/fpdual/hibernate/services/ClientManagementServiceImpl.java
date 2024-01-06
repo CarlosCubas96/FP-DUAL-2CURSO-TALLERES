@@ -10,9 +10,10 @@ import com.fpdual.hibernate.persistence.ClientDaoI;
 import com.fpdual.hibernate.persistence.ClientDaoImpl;
 
 /**
- * FPDUAL - HIBERNATE - Taller1 Implementación del Servicio de Clientes.
- * Proporciona métodos para realizar operaciones CRUD y búsquedas de clientes en
- * la base de datos.
+ * FPDUAL - HIBERNATE - Taller2
+ * 
+ * Implementación del Servicio de Clientes. Proporciona métodos para realizar
+ * operaciones CRUD y búsquedas de clientes en la base de datos.
  * 
  * @author Carlos
  */

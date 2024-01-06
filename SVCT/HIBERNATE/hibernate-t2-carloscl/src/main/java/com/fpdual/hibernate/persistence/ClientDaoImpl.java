@@ -7,7 +7,7 @@ import org.hibernate.query.Query;
 import com.fpdual.hibernate.Utils;
 
 /**
- * FPDUAL - HIBERNATE - Taller1
+ * FPDUAL - HIBERNATE - Taller2
  * 
  * Implementación del DAO para la tabla FPDUAL_HEX_CLIENT. Extiende
  * CommonDaoImpl para heredar la funcionalidad común.

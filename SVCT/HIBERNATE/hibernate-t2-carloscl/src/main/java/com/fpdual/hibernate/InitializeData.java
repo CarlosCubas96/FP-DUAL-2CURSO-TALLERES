@@ -12,7 +12,7 @@ import com.fpdual.hibernate.services.ClientManagementServiceImpl;
 import com.fpdual.hibernate.services.ContractManagementServiceImpl;
 
 /**
- * FPDUAL - HIBERNATE - Taller1
+ * FPDUAL - HIBERNATE - Taller2
  * 
  * Clase para inicializar datos de clientes.
  * 
