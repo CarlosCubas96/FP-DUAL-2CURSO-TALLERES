@@ -41,8 +41,11 @@ Este proyecto web es una adaptación del ejercicio del taller 1, incorporando un
 ### Implementación de JSP y Servlets
 4. Implementa páginas JSP y Servlets para interactuar con los servicios de gestión de Clientes y Contratos. Puedes utilizar estas páginas para probar todas las operaciones.
 
+### Implementación de los métodos de los servicios Cliente y Contrato
+5. Implementar los metodos de los servicios de Cliente y Contrato
+
 ### Ejecución del Proyecto
-5. Despliega tu proyecto en un contenedor web como Apache Tomcat.
+6. Despliega tu proyecto en un contenedor web como Apache Tomcat.
 
 ## Ejecución
 
@@ -243,7 +246,225 @@ En este proyecto, se han implementado varios Servlets para gestionar las operaci
 - **Descripción:** Página de manejo de errores que se utiliza para redirigir en caso de fallos en las operaciones.
 
 
-### 5. Ejecución del Proyecto
+## 4. Implementacion de JSP y Servlets
+
+Se ha llevado a cabo la implementacion en las páginas JSP y Servlets para las interfaces e implementaciones de los DAO y servicios.
+
+### Servlets
+
+Se han implementado los Servlets para incorporar llamadas a los nuevos métodos de los servicios que consumen las consultas. A continuación, se presenta de cómo se realiza esta integración en los Servlet:
+
+### SearchClientServlet.java
+
+```java
+// ... (código previo)
+
+@WebServlet("/SearchClientServlet")
+public class SearchClientServlet extends HttpServlet {
+
+    // ... (métodos y atributos previos)
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
+            // Obtener el parámetro de búsqueda del formulario
+            String searchKeyword = request.getParameter("searchKeyword");
+
+            // Realizar la búsqueda en el servicio de gestión de clientes
+            ClientManagementServiceImpl clientService = new ClientManagementServiceImpl(session);
+            List<Client> searchResults = clientService.searchByName(searchKeyword);
+
+            // Guardar los resultados en el request
+            request.setAttribute("clients", searchResults);
+
+            // Log para registrar la búsqueda realizada
+            Utils.log(Utils.INFO, "Búsqueda realizada por nombre: " + searchKeyword);
+
+            // Redirigir a la página de lista de clientes con los resultados de la búsqueda
+            request.getRequestDispatcher("JSP/listClients.jsp").forward(request, response);
+
+        } catch (Exception e) {
+            // Log para registrar errores en la búsqueda
+            Utils.log(Utils.ERROR, "Error al procesar la solicitud GET en SearchClientServlet: " + e);
+            response.sendRedirect(Constants.JSP_ERROR_JSP);
+        }
+    }
+}
+
+```
+
+### SearchContractServlet.java
+
+```java
+// ... (código previo)
+
+@WebServlet("/SearchContractServlet")
+public class SearchContractServlet extends HttpServlet {
+
+    // ... (métodos y atributos previos)
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        // Obtener la sesión
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
+            // Crear una instancia del servicio de contratos
+            ContractManagementServiceImpl contractService = new ContractManagementServiceImpl(session);
+
+            // Obtener el parámetro DNI de la solicitud
+            String searchDNI = request.getParameter("searchDNI");
+
+            // Buscar contratos por DNI
+            List<Contract> contracts = contractService.searchContractByClientIdentityDocument(searchDNI);
+
+            // Establecer los contratos como atributo en la solicitud
+            request.setAttribute("contracts", contracts);
+
+            // Redirigir a la página JSP de contratos
+            request.getRequestDispatcher("JSP/listContracts.jsp").forward(request, response);
+
+        } catch (Exception e) {
+            Utils.log(Utils.ERROR, "Error al procesar la solicitud GET en SearchContractServlet: " + e);
+            response.sendRedirect(Constants.JSP_ERROR_JSP);
+        }
+    }
+}
+
+```
+
+### JSP
+Las páginas JSP han sido implementadas para mostrar los resultados de las nuevas consultas JPA Criteria. A continuación, se muestran los fragmentos de código que presentan las listas obtenidas:
+
+- Se implementa el formulario para la busqueda de clientes por nombre o apellidos retornando los clientes obtenidos
+
+```jsp
+
+<!-- Formulario de búsqueda -->
+<form action="SearchClientServlet" method="get" class="mb-3">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search by name, lastname or secondname"
+            name="searchKeyword">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+    </div>
+</form>
+
+```
+- Se implementa el formulario para la busqueda de contratos por id de cliente
+
+```jsp
+<!-- Formulario de búsqueda por DNI -->
+<form action="SearchContractServlet" method="get" class="mb-3">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search by ID"
+            name="searchDNI">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+    </div>
+</form>
+
+```
+
+
+
+### 5. Implementación de los métodos de los servicios Cliente y Contrato
+
+### Cliente
+
+Este método **searchByNameAndLastName** busca clientes por su nombre y apellidos, permitiendo la búsqueda con flexibilidad. Se utiliza una consulta HQL (Hibernate Query Language) que incluye parámetros opcionales para los campos de nombre, primer apellido y segundo apellido. El método realiza la consulta, registra información detallada sobre la operación en los logs y devuelve la lista de clientes encontrados.
+
+```java
+/**
+ * Busca clientes por nombre y apellidos.
+ *
+ * @param firstName      El nombre del cliente.
+ * @param lastName       El primer apellido del cliente.
+ * @param secondLastName El segundo apellido del cliente.
+ * @return Lista de clientes que coinciden con alguno de los parámetros dados.
+ */
+@Override
+public List<Client> searchByNameAndLastName(String firstName, String lastName, String secondLastName) {
+    // Verificación de sesión abierta.
+    if (!session.getTransaction().isActive()) {
+        session.getTransaction().begin();
+    }
+
+    // Consulta HQL para buscar clientes por nombre y apellidos.
+    String hql = "FROM Client c WHERE "
+            + "(:firstName IS NULL OR :firstName = '' OR c.firstName LIKE :firstName) OR "
+            + "(:lastName IS NULL OR :lastName = '' OR c.lastName LIKE :lastName) OR "
+            + "(:secondLastName IS NULL OR :secondLastName = '' OR c.secondLastName LIKE :secondLastName)";
+
+    Query<Client> query = session.createQuery(hql, Client.class);
+    query.setParameter("firstName", "%" + firstName + "%");
+    query.setParameter("lastName", "%" + lastName + "%");
+    query.setParameter("secondLastName", "%" + secondLastName + "%");
+
+    // Agregar log para la consulta realizada
+    Utils.log(Utils.INFO, "Realizando consulta para buscar clientes por nombre y apellidos.");
+
+    // Ejecutar la consulta y devolver los resultados.
+    List<Client> clients = query.list();
+
+    // Agregar log para la cantidad de resultados encontrados
+    Utils.log(Utils.INFO, "Número de clientes encontrados: " + clients.size());
+
+    // Confirmar la transacción.
+    session.getTransaction().commit();
+
+    return clients;
+}
+
+```
+
+### Contrato
+
+Este método **searchContractByClientId** busca contratos por el ID del cliente asociado. Se utiliza una consulta HQL para obtener la lista de contratos que pertenecen al cliente identificado por el clientId. El método registra información detallada sobre la operación en los logs y devuelve la lista de contratos encontrados.
+
+```java
+/**
+ * Busca contratos por el ID del cliente asociado.
+ * 
+ * @param clientId El ID del cliente.
+ * @return Una lista de contratos asociados con el ID de cliente especificado.
+ */
+@Override
+public List<Contract> searchContractByClientId(Long clientId) {
+    // Verificación de sesión abierta.
+    if (!session.getTransaction().isActive()) {
+        session.getTransaction().begin();
+    }
+
+    // Consulta HQL para buscar contratos por el ID del cliente asociado.
+    String hql = "FROM Contract c WHERE c.client.id = :clientId";
+    Query<Contract> query = session.createQuery(hql, Contract.class);
+    query.setParameter("clientId", clientId);
+
+    // Agregar log para la consulta realizada
+    Utils.log(Utils.INFO, "Realizando consulta para buscar contratos por el ID del cliente.");
+
+    // Ejecutar la consulta y devolver los resultados.
+    List<Contract> contracts = query.list();
+
+    // Agregar log para la cantidad de resultados encontrados
+    Utils.log(Utils.INFO, "Número de contratos encontrados: " + contracts.size());
+
+    // Confirmar la transacción.
+    session.getTransaction().commit();
+
+    return contracts;
+}
+
+```
+
+### 6. Ejecución del Proyecto
 
 Asegúrate de seguir estos pasos para desplegar el proyecto en un contenedor web como Apache Tomcat:
 
@@ -267,7 +488,8 @@ Asegúrate de seguir estos pasos para desplegar el proyecto en un contenedor web
    - Iniciar Apache Tomcat.
 
 6. **Acceso a la Aplicación:**
-   - Una vez iniciado Apache Tomcat, abre tu navegador web y accede a la aplicación utilizando la URL correspondiente. Por ejemplo, `http://localhost:8080/mi-proyecto`.
+   - Una vez iniciado Apache Tomcat, abre tu navegador web y accede a la aplicación utilizando la URL correspondiente. [Acceder a la aplicación](http://localhost:8080/hibernate-t2-carloscl)
+
 
 7. **Prueba de Funcionalidades:**
    - Interactúa con las páginas JSP y Servlets implementadas para gestionar clientes y contratos. Asegúrarse de probar todas las operaciones para garantizar el correcto funcionamiento de la aplicación.
