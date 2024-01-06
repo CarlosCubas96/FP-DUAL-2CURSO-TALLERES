@@ -1,0 +1,1080 @@
+19:54:47.665 [main] DEBUG org.jboss.logging - [logProvider]
+				- Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+19:54:47.710 [main] DEBUG o.h.i.i.IntegratorServiceImpl - [addIntegrator]
+				- Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+19:54:47.725 [main] DEBUG o.h.i.i.IntegratorServiceImpl - [addIntegrator]
+				- Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+19:54:47.749 [main] DEBUG o.h.i.i.IntegratorServiceImpl - [addIntegrator]
+				- Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+19:54:47.954 [main] INFO org.hibernate.Version - [logVersion]
+				- HHH000412: Hibernate ORM core version 5.5.3.Final
+19:54:47.995 [main] DEBUG org.hibernate.cfg.Environment - [<clinit>]
+				- HHH000206: hibernate.properties not found
+19:54:49.034 [main] DEBUG o.h.b.j.i.s.LocalXmlResourceResolver - [resolveEntity]
+				- Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+19:54:49.036 [main] DEBUG o.h.b.j.i.s.LocalXmlResourceResolver - [resolveEntity]
+				- Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+19:54:49.055 [main] DEBUG o.h.b.c.i.JaxbCfgProcessor - [unmarshal]
+				- cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+19:54:50.321 [main] DEBUG org.hibernate.cfg.Configuration - [buildSessionFactory]
+				- Building session factory using internal StandardServiceRegistryBuilder
+19:54:50.411 [main] DEBUG o.h.service.spi.ServiceBinding - [setService]
+				- Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+19:54:50.414 [main] DEBUG org.hibernate.cfg.Configuration - [buildSessionFactory]
+				- Building session factory using provided StandardServiceRegistry
+19:54:50.470 [main] DEBUG o.h.c.i.RegionFactoryInitiator - [resolveRegionFactory]
+				- Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+19:54:50.477 [main] DEBUG o.h.c.i.RegionFactoryInitiator - [initiateService]
+				- Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+19:54:50.620 [main] INFO o.h.annotations.common.Version - [<clinit>]
+				- HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+19:54:51.286 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration boolean -> org.hibernate.type.BooleanType@3c321bdb
+19:54:51.291 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration boolean -> org.hibernate.type.BooleanType@3c321bdb
+19:54:51.295 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@3c321bdb
+19:54:51.300 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@3fabf088
+19:54:51.309 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration true_false -> org.hibernate.type.TrueFalseType@2c22a348
+19:54:51.315 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration yes_no -> org.hibernate.type.YesNoType@6831d8fd
+19:54:51.322 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration byte -> org.hibernate.type.ByteType@3ad394e6
+19:54:51.336 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration byte -> org.hibernate.type.ByteType@3ad394e6
+19:54:51.339 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@3ad394e6
+19:54:51.346 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration character -> org.hibernate.type.CharacterType@6f6a7463
+19:54:51.352 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration char -> org.hibernate.type.CharacterType@6f6a7463
+19:54:51.355 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@6f6a7463
+19:54:51.360 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration short -> org.hibernate.type.ShortType@3a7704c
+19:54:51.361 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration short -> org.hibernate.type.ShortType@3a7704c
+19:54:51.364 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.lang.Short -> org.hibernate.type.ShortType@3a7704c
+19:54:51.368 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration integer -> org.hibernate.type.IntegerType@3301500b
+19:54:51.369 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration int -> org.hibernate.type.IntegerType@3301500b
+19:54:51.371 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@3301500b
+19:54:51.375 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration long -> org.hibernate.type.LongType@36dce7ed
+19:54:51.376 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration long -> org.hibernate.type.LongType@36dce7ed
+19:54:51.377 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.lang.Long -> org.hibernate.type.LongType@36dce7ed
+19:54:51.384 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration float -> org.hibernate.type.FloatType@106faf11
+19:54:51.385 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration float -> org.hibernate.type.FloatType@106faf11
+19:54:51.386 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.lang.Float -> org.hibernate.type.FloatType@106faf11
+19:54:51.392 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration double -> org.hibernate.type.DoubleType@7bfc3126
+19:54:51.393 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration double -> org.hibernate.type.DoubleType@7bfc3126
+19:54:51.394 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@7bfc3126
+19:54:51.400 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@54a3ab8f
+19:54:51.401 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@54a3ab8f
+19:54:51.405 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration big_integer -> org.hibernate.type.BigIntegerType@3ef41c66
+19:54:51.406 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@3ef41c66
+19:54:51.410 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration string -> org.hibernate.type.StringType@e041f0c
+19:54:51.411 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.lang.String -> org.hibernate.type.StringType@e041f0c
+19:54:51.415 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration nstring -> org.hibernate.type.StringNVarcharType@11ee02f8
+19:54:51.419 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@5b69fd74
+19:54:51.426 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration url -> org.hibernate.type.UrlType@271f18d3
+19:54:51.431 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.net.URL -> org.hibernate.type.UrlType@271f18d3
+19:54:51.436 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration Duration -> org.hibernate.type.DurationType@3fc08eec
+19:54:51.438 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.time.Duration -> org.hibernate.type.DurationType@3fc08eec
+19:54:51.443 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration Instant -> org.hibernate.type.InstantType@467f77a5
+19:54:51.444 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.time.Instant -> org.hibernate.type.InstantType@467f77a5
+19:54:51.449 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@58cd06cb
+19:54:51.451 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@58cd06cb
+19:54:51.456 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration LocalDate -> org.hibernate.type.LocalDateType@1c05a54d
+19:54:51.457 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@1c05a54d
+19:54:51.462 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@79c4715d
+19:54:51.463 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@79c4715d
+19:54:51.474 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@62577d6
+19:54:51.486 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@62577d6
+19:54:51.494 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@3d829787
+19:54:51.496 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@3d829787
+19:54:51.501 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@d71adc2
+19:54:51.502 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@d71adc2
+19:54:51.509 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration date -> org.hibernate.type.DateType@39fc6b2c
+19:54:51.510 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.sql.Date -> org.hibernate.type.DateType@39fc6b2c
+19:54:51.515 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration time -> org.hibernate.type.TimeType@2bffa76d
+19:54:51.516 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.sql.Time -> org.hibernate.type.TimeType@2bffa76d
+19:54:51.522 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration timestamp -> org.hibernate.type.TimestampType@46292372
+19:54:51.523 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@46292372
+19:54:51.525 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.util.Date -> org.hibernate.type.TimestampType@46292372
+19:54:51.533 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@530a8454
+19:54:51.539 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration calendar -> org.hibernate.type.CalendarType@aa5455e
+19:54:51.540 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@aa5455e
+19:54:51.541 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@aa5455e
+19:54:51.544 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@d4ab71a
+19:54:51.549 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@25230246
+19:54:51.553 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration locale -> org.hibernate.type.LocaleType@315ba14a
+19:54:51.554 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@315ba14a
+19:54:51.561 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration currency -> org.hibernate.type.CurrencyType@50cf5a23
+19:54:51.562 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@50cf5a23
+19:54:51.569 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration timezone -> org.hibernate.type.TimeZoneType@3b582111
+19:54:51.572 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@3b582111
+19:54:51.579 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration class -> org.hibernate.type.ClassType@12365c88
+19:54:51.580 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.lang.Class -> org.hibernate.type.ClassType@12365c88
+19:54:51.591 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@64d7b720
+19:54:51.592 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@64d7b720
+19:54:51.595 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@2c1dc8e
+19:54:51.599 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration binary -> org.hibernate.type.BinaryType@1162410a
+19:54:51.600 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration byte[] -> org.hibernate.type.BinaryType@1162410a
+19:54:51.603 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration [B -> org.hibernate.type.BinaryType@1162410a
+19:54:51.609 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@515f4131
+19:54:51.611 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@515f4131
+19:54:51.612 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@515f4131
+19:54:51.621 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration row_version -> org.hibernate.type.RowVersionType@6134ac4a
+19:54:51.623 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration image -> org.hibernate.type.ImageType@3773862a
+19:54:51.626 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration characters -> org.hibernate.type.CharArrayType@236ab296
+19:54:51.628 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration char[] -> org.hibernate.type.CharArrayType@236ab296
+19:54:51.630 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration [C -> org.hibernate.type.CharArrayType@236ab296
+19:54:51.634 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@71ea1fda
+19:54:51.635 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@71ea1fda
+19:54:51.636 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@71ea1fda
+19:54:51.639 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration text -> org.hibernate.type.TextType@5fa47fea
+19:54:51.645 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration ntext -> org.hibernate.type.NTextType@545f80bf
+19:54:51.651 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration blob -> org.hibernate.type.BlobType@350b3a17
+19:54:51.652 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@350b3a17
+19:54:51.655 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@1ea9f009
+19:54:51.661 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration clob -> org.hibernate.type.ClobType@15b986cd
+19:54:51.661 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@15b986cd
+19:54:51.667 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration nclob -> org.hibernate.type.NClobType@2c0f7678
+19:54:51.669 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@2c0f7678
+19:54:51.675 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@742d4e15
+19:54:51.678 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@5fa05212
+19:54:51.683 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration serializable -> org.hibernate.type.SerializableType@60222fd8
+19:54:51.695 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration object -> org.hibernate.type.ObjectType@894858
+19:54:51.696 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@894858
+19:54:51.698 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@74cf8b28
+19:54:51.700 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@36c54a56
+19:54:51.701 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@3359c978
+19:54:51.702 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@7ba63fe5
+19:54:51.703 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@73386d72
+19:54:51.703 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@6f330eb9
+19:54:51.704 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@125c082e
+19:54:51.705 [main] DEBUG o.h.type.BasicTypeRegistry - [register]
+				- Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@584f5497
+19:54:51.944 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+19:54:51.950 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+19:54:51.953 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+19:54:51.955 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+19:54:51.959 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+19:54:51.965 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+19:54:51.968 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+19:54:51.972 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+19:54:51.977 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+19:54:51.987 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+19:54:51.990 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+19:54:51.994 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+19:54:51.995 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+19:54:52.002 [main] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - [register]
+				- Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+19:54:52.055 [main] INFO o.h.c.i.C3P0ConnectionProvider - [configure]
+				- HHH010002: C3P0 using driver: com.mysql.cj.jdbc.Driver at URL: jdbc:mysql://localhost:3306/FPDUAL_HIBERNATE_MYSQL_T3?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+19:54:52.072 [main] INFO o.h.c.i.C3P0ConnectionProvider - [configure]
+				- HHH10001001: Connection properties: {password=****, user=sqladmin}
+19:54:52.073 [main] INFO o.h.c.i.C3P0ConnectionProvider - [configure]
+				- HHH10001003: Autocommit mode: false
+19:54:52.188 [MLog-Init-Reporter] INFO com.mchange.v2.log.MLog - [log]
+				- MLog clients using slf4j logging.
+19:54:52.223 [main] DEBUG com.mchange.v2.cfg.MConfig - [log]
+				- The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+19:54:52.224 [main] DEBUG com.mchange.v2.cfg.MConfig - [log]
+				- The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+19:54:52.225 [main] DEBUG com.mchange.v2.cfg.MConfig - [log]
+				- The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+19:54:52.228 [main] DEBUG com.mchange.v2.cfg.MConfig - [log]
+				- The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+19:54:52.237 [MLog-Init-Reporter] DEBUG com.mchange.v2.log.MLog - [log]
+				- Reading VM config for path list /com/mchange/v2/log/default-mchange-log.properties, /mchange-commons.properties, /c3p0.properties, hocon:/reference,/application,/c3p0,/, /mchange-log.properties, /
+19:54:52.238 [MLog-Init-Reporter] DEBUG com.mchange.v2.log.MLog - [log]
+				- The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+19:54:52.239 [MLog-Init-Reporter] DEBUG com.mchange.v2.log.MLog - [log]
+				- The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+19:54:52.241 [MLog-Init-Reporter] DEBUG com.mchange.v2.log.MLog - [log]
+				- The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+19:54:52.242 [MLog-Init-Reporter] DEBUG com.mchange.v2.log.MLog - [log]
+				- The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+19:54:53.511 [main] INFO c.mchange.v2.c3p0.C3P0Registry - [log]
+				- Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+19:54:53.791 [main] DEBUG c.m.v.c.m.DynamicPooledDataSourceManagerMBean - [log]
+				- MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hgf4zlb01lwfiaw1ke7ozk|39109136,name=1hgf4zlb01lwfiaw1ke7ozk|39109136 registered.
+19:54:53.907 [main] DEBUG c.m.v.c.m.DynamicPooledDataSourceManagerMBean - [log]
+				- MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hgf4zlb01lwfiaw1ke7ozk|39109136,name=1hgf4zlb01lwfiaw1ke7ozk|39109136 unregistered, in order to be reregistered after update.
+19:54:53.909 [main] DEBUG c.m.v.c.m.DynamicPooledDataSourceManagerMBean - [log]
+				- MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hgf4zlb01lwfiaw1ke7ozk|39109136,name=1hgf4zlb01lwfiaw1ke7ozk|39109136 registered.
+19:54:53.940 [main] INFO o.h.c.i.C3P0ConnectionProvider - [configure]
+				- HHH10001007: JDBC isolation level: <unknown>
+19:54:54.008 [main] INFO c.m.v.c.i.AbstractPoolBackedDataSource - [log]
+				- Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@4c188660 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@6813e045 [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, identityToken -> 1hgf4zlb01lwfiaw1ke7ozk|16a9a4f1, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 300, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 20, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@c0a6c54b [ description -> null, driverClass -> null, factoryClassLocation -> null, forceUseNamedDriverClass -> false, identityToken -> 1hgf4zlb01lwfiaw1ke7ozk|69b2f8e5, jdbcUrl -> jdbc:mysql://localhost:3306/FPDUAL_HIBERNATE_MYSQL_T3?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true, properties -> {password=******, user=******} ], preferredTestQuery -> null, privilegeSpawnedThreads -> false, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, extensions -> {}, factoryClassLocation -> null, identityToken -> 1hgf4zlb01lwfiaw1ke7ozk|39109136, numHelperThreads -> 3 ]
+19:54:54.072 [main] DEBUG com.mchange.v2.cfg.MConfig - [log]
+				- The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+19:54:54.079 [main] DEBUG com.mchange.v2.cfg.MConfig - [log]
+				- The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+19:54:54.082 [main] DEBUG com.mchange.v2.cfg.MConfig - [log]
+				- The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+19:54:54.084 [main] DEBUG com.mchange.v2.cfg.MConfig - [log]
+				- The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+19:54:54.091 [main] DEBUG c.m.v.r.BasicResourcePool - [log]
+				- com.mchange.v2.resourcepool.BasicResourcePool@66e8997c config: [start -> 5; min -> 5; max -> 20; inc -> 3; num_acq_attempts -> 30; acq_attempt_delay -> 1000; check_idle_resources_delay -> 3000000; max_resource_age -> 0; max_idle_time -> 300000; excess_max_idle_time -> 0; destroy_unreturned_resc_time -> 0; expiration_enforcement_delay -> 75000; break_on_acquisition_failure -> false; debug_store_checkout_exceptions -> false; force_synchronous_checkins -> false]
+19:54:54.092 [main] DEBUG c.m.v.c.i.C3P0PooledConnectionPoolManager - [log]
+				- Created new pool for auth, username (masked): 'sq******'.
+19:54:54.093 [main] DEBUG c.m.v.r.BasicResourcePool - [log]
+				- acquire test -- pool size: 0; target_pool_size: 5; desired target? 1
+19:54:54.094 [main] DEBUG c.m.v.r.BasicResourcePool - [log]
+				- awaitAvailable(): [unknown]
+19:54:55.382 [main] DEBUG o.h.e.j.e.i.JdbcEnvironmentInitiator - [initiateService]
+				- Database ->
+       name : MySQL
+    version : 8.0.31
+      major : 8
+      minor : 0
+19:54:55.387 [main] DEBUG o.h.e.j.e.i.JdbcEnvironmentInitiator - [initiateService]
+				- Driver ->
+       name : MySQL Connector/J
+    version : mysql-connector-java-8.0.23 (Revision: 18bbd5e68195d0da083cbd5bd0d05d76320df7cd)
+      major : 8
+      minor : 0
+19:54:55.388 [main] DEBUG o.h.e.j.e.i.JdbcEnvironmentInitiator - [debugf]
+				- JDBC version : 4.2
+19:54:55.473 [main] INFO org.hibernate.dialect.Dialect - [<init>]
+				- HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+19:54:55.636 [main] DEBUG o.h.e.j.e.s.IdentifierHelperBuilder - [applyIdentifierCasing]
+				- JDBC driver metadata reported database stores quoted identifiers in more than one case
+19:54:55.639 [main] DEBUG o.h.e.j.e.s.IdentifierHelperBuilder - [build]
+				- IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [LOWER]; that will likely lead to problems in schema update and validation if using quoted identifiers
+19:54:55.938 [main] DEBUG c.m.v.c.impl.NewProxyConnection - [log]
+				- com.mchange.v2.c3p0.impl.NewProxyConnection@64a4dd8d [wrapping: com.mysql.cj.jdbc.ConnectionImpl@2dddc1b9]: close() called more than once.
+19:54:55.956 [main] DEBUG o.h.b.model.relational.Namespace - [<init>]
+				- Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+19:54:55.981 [main] DEBUG o.h.t.s.TypeConfiguration$Scope - [scope]
+				- Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@2add4d24] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@3f93e4a8]
+19:54:56.227 [main] DEBUG o.hibernate.cfg.AnnotationBinder - [bindClass]
+				- Binding entity from annotated class: com.fpdual.hibernate.persistence.Client
+19:54:56.276 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+19:54:56.313 [main] DEBUG o.h.cfg.annotations.EntityBinder - [bindEntity]
+				- Import with entity name Client
+19:54:56.323 [main] DEBUG o.h.cfg.annotations.EntityBinder - [bindTable]
+				- Bind entity com.fpdual.hibernate.persistence.Client on table FPDUAL_HEX_CLIENT
+19:54:56.459 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CLIENT), mappingColumn=CLIENT_ID, insertable=true, updatable=true, unique=false}
+19:54:56.476 [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - [classForName]
+				- Not known whether passed class name [com.fpdual.hibernate.persistence.Client] is safe
+19:54:56.477 [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - [classForName]
+				- No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.fpdual.hibernate.persistence.Client
+19:54:56.486 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property clientId with lazy=false
+19:54:56.492 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Client:clientId]
+19:54:56.501 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for clientId
+19:54:56.508 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property clientId
+19:54:56.525 [main] DEBUG org.hibernate.cfg.BinderHelper - [makeIdGenerator]
+				- #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(CLIENT_ID)]), clientId, identity, , ...)
+19:54:56.529 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CLIENT), mappingColumn=AUDIT_UPDATED_DATE, insertable=true, updatable=true, unique=false}
+19:54:56.530 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property updatedDate with lazy=false
+19:54:56.533 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Client:updatedDate]
+19:54:56.534 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for updatedDate
+19:54:56.535 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property updatedDate
+19:54:56.536 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CLIENT), mappingColumn=AUDIT_UPDATED_USER, insertable=true, updatable=true, unique=false}
+19:54:56.541 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property updatedUser with lazy=false
+19:54:56.542 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Client:updatedUser]
+19:54:56.544 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for updatedUser
+19:54:56.545 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property updatedUser
+19:54:56.551 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='client'}
+19:54:56.557 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CLIENT), mappingColumn=contracts, insertable=true, updatable=true, unique=false}
+19:54:56.580 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CLIENT), mappingColumn=null, insertable=true, updatable=true, unique=false}
+19:54:56.656 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CLIENT), mappingColumn=element, insertable=true, updatable=true, unique=false}
+19:54:56.659 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CLIENT), mappingColumn=contracts_KEY, insertable=true, updatable=true, unique=false}
+19:54:56.663 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3JoinColumn{logicalColumnName='contracts_KEY', referencedColumn='null', mappedBy='null'}
+19:54:56.671 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='client'}
+19:54:56.677 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='client'}
+19:54:56.701 [main] DEBUG o.h.c.a.CollectionBinder - [bind]
+				- Collection role: com.fpdual.hibernate.persistence.Client.contracts
+19:54:56.711 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property contracts
+19:54:56.713 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CLIENT), mappingColumn=FIRST_NAME, insertable=true, updatable=true, unique=false}
+19:54:56.718 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property firstName with lazy=false
+19:54:56.721 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Client:firstName]
+19:54:56.727 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for firstName
+19:54:56.728 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property firstName
+19:54:56.730 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CLIENT), mappingColumn=IDENTITY_DOCUMENT, insertable=true, updatable=true, unique=true}
+19:54:56.732 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property identityDocument with lazy=false
+19:54:56.733 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Client:identityDocument]
+19:54:56.734 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for identityDocument
+19:54:56.734 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property identityDocument
+19:54:56.738 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CLIENT), mappingColumn=LAST_NAME, insertable=true, updatable=true, unique=false}
+19:54:56.738 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property lastName with lazy=false
+19:54:56.745 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Client:lastName]
+19:54:56.746 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for lastName
+19:54:56.749 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property lastName
+19:54:56.749 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CLIENT), mappingColumn=SECOND_LAST_NAME, insertable=true, updatable=true, unique=false}
+19:54:56.752 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property secondLastName with lazy=false
+19:54:56.753 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Client:secondLastName]
+19:54:56.753 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for secondLastName
+19:54:56.754 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property secondLastName
+19:54:56.760 [main] DEBUG o.hibernate.cfg.AnnotationBinder - [bindClass]
+				- Binding entity from annotated class: com.fpdual.hibernate.persistence.Contract
+19:54:56.772 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+19:54:56.775 [main] DEBUG o.h.cfg.annotations.EntityBinder - [bindEntity]
+				- Import with entity name Contract
+19:54:56.776 [main] DEBUG o.h.cfg.annotations.EntityBinder - [bindTable]
+				- Bind entity com.fpdual.hibernate.persistence.Contract on table FPDUAL_HEX_CONTRACT
+19:54:56.808 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CONTRACT), mappingColumn=CONTRACT_ID, insertable=true, updatable=true, unique=false}
+19:54:56.809 [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - [classForName]
+				- Not known whether passed class name [com.fpdual.hibernate.persistence.Contract] is safe
+19:54:56.810 [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - [classForName]
+				- No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.fpdual.hibernate.persistence.Contract
+19:54:56.810 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property contractId with lazy=false
+19:54:56.811 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Contract:contractId]
+19:54:56.812 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for contractId
+19:54:56.814 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property contractId
+19:54:56.814 [main] DEBUG org.hibernate.cfg.BinderHelper - [makeIdGenerator]
+				- #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(CONTRACT_ID)]), contractId, identity, , ...)
+19:54:56.815 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CONTRACT), mappingColumn=AUDIT_UPDATED_DATE, insertable=true, updatable=true, unique=false}
+19:54:56.816 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property updatedDate with lazy=false
+19:54:56.817 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Contract:updatedDate]
+19:54:56.819 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for updatedDate
+19:54:56.821 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property updatedDate
+19:54:56.823 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CONTRACT), mappingColumn=AUDIT_UPDATED_USER, insertable=true, updatable=true, unique=false}
+19:54:56.825 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property updatedUser with lazy=false
+19:54:56.827 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Contract:updatedUser]
+19:54:56.828 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for updatedUser
+19:54:56.829 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property updatedUser
+19:54:56.841 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3JoinColumn{logicalColumnName='FK_CLIENT_ID', referencedColumn='', mappedBy=''}
+19:54:56.844 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CONTRACT), mappingColumn=client, insertable=true, updatable=true, unique=false}
+19:54:56.855 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property client
+19:54:56.865 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CONTRACT), mappingColumn=EXPIRATION_DATE, insertable=true, updatable=true, unique=false}
+19:54:56.867 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property endDate with lazy=false
+19:54:56.868 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Contract:endDate]
+19:54:56.870 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for endDate
+19:54:56.872 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property endDate
+19:54:56.874 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CONTRACT), mappingColumn=MONTHLY_PRICE, insertable=true, updatable=true, unique=false}
+19:54:56.876 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property monthlyPrice with lazy=false
+19:54:56.877 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Contract:monthlyPrice]
+19:54:56.878 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for monthlyPrice
+19:54:56.880 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property monthlyPrice
+19:54:56.882 [main] DEBUG org.hibernate.cfg.Ejb3Column - [bind]
+				- Binding column: Ejb3Column{table=org.hibernate.mapping.Table(FPDUAL_HEX_CONTRACT), mappingColumn=VIGENCY_DATE, insertable=true, updatable=true, unique=false}
+19:54:56.884 [main] DEBUG o.h.c.annotations.PropertyBinder - [makePropertyAndValue]
+				- MetadataSourceProcessor property startDate with lazy=false
+19:54:56.885 [main] DEBUG o.h.cfg.AbstractPropertyHolder - [resolveAttributeConverterDescriptor]
+				- Attempting to locate auto-apply AttributeConverter for property [com.fpdual.hibernate.persistence.Contract:startDate]
+19:54:56.887 [main] DEBUG o.h.c.a.SimpleValueBinder - [make]
+				- building SimpleValue for startDate
+19:54:56.892 [main] DEBUG o.h.c.annotations.PropertyBinder - [makeProperty]
+				- Building property startDate
+19:54:56.901 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for clientId
+19:54:56.903 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for updatedDate
+19:54:56.905 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for updatedUser
+19:54:56.905 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for firstName
+19:54:56.906 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for identityDocument
+19:54:56.907 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for lastName
+19:54:56.909 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for secondLastName
+19:54:56.919 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for contractId
+19:54:56.921 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for updatedDate
+19:54:56.928 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for updatedUser
+19:54:56.942 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for endDate
+19:54:56.946 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for monthlyPrice
+19:54:56.948 [main] DEBUG o.h.c.a.SimpleValueBinder - [fillSimpleValue]
+				- Starting fillSimpleValue for startDate
+19:54:56.975 [main] DEBUG o.hibernate.mapping.PrimaryKey - [addColumn]
+				- Forcing column [client_id] to be non-null as it is part of the primary key for table [fpdual_hex_client]
+19:54:56.985 [main] DEBUG o.hibernate.mapping.PrimaryKey - [addColumn]
+				- Forcing column [contract_id] to be non-null as it is part of the primary key for table [fpdual_hex_contract]
+19:54:56.988 [main] DEBUG o.h.cfg.CollectionSecondPass - [doSecondPass]
+				- Second pass for collection: com.fpdual.hibernate.persistence.Client.contracts
+19:54:56.999 [main] DEBUG o.h.c.a.CollectionBinder - [bindOneToManySecondPass]
+				- Binding a OneToMany: com.fpdual.hibernate.persistence.Client.contracts through a foreign key
+19:54:57.008 [main] DEBUG o.h.c.a.CollectionBinder - [bindOneToManySecondPass]
+				- Mapping collection: com.fpdual.hibernate.persistence.Client.contracts -> FPDUAL_HEX_CONTRACT
+19:54:57.023 [main] DEBUG o.h.cfg.annotations.TableBinder - [bindFk]
+				- Retrieving property com.fpdual.hibernate.persistence.Contract.client
+19:54:57.027 [main] DEBUG o.h.cfg.CollectionSecondPass - [doSecondPass]
+				- Mapped collection key: FK_CLIENT_ID, one-to-many: com.fpdual.hibernate.persistence.Contract
+19:54:57.029 [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - [secondPassCompileForeignKeys]
+				- Resolving reference to class: com.fpdual.hibernate.persistence.Client
+19:54:57.070 [main] DEBUG o.h.b.i.InFlightMetadataCollectorImpl - [secondPassCompileForeignKeys]
+				- Resolving reference to class: com.fpdual.hibernate.persistence.Client
+19:54:57.206 [main] DEBUG o.h.internal.SessionFactoryImpl - [<init>]
+				- Building session factory
+19:54:57.210 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- SessionFactory name : null
+19:54:57.211 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Automatic flush during beforeCompletion(): enabled
+19:54:57.213 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Automatic session close at end of transaction: disabled
+19:54:57.215 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Statistics: disabled
+19:54:57.216 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Deleted entity synthetic identifier rollback: disabled
+19:54:57.217 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Default entity-mode: pojo
+19:54:57.218 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+19:54:57.221 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Allow initialization of lazy state outside session : disabled
+19:54:57.222 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Using BatchFetchStyle : LEGACY
+19:54:57.223 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Default batch fetch size: -1
+19:54:57.224 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Maximum outer join fetch depth: 2
+19:54:57.226 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Default null ordering: NONE
+19:54:57.227 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Order SQL updates by primary key: disabled
+19:54:57.228 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Order SQL inserts for batching: disabled
+19:54:57.229 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- multi-tenancy strategy : NONE
+19:54:57.230 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- JTA Track by Thread: enabled
+19:54:57.230 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Query language substitutions: {}
+19:54:57.230 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Named query checking : enabled
+19:54:57.231 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Second-level cache: disabled
+19:54:57.232 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Second-level query cache: disabled
+19:54:57.234 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Second-level query cache factory: null
+19:54:57.235 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Second-level cache region prefix: null
+19:54:57.235 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Optimize second-level cache for minimal puts: disabled
+19:54:57.236 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Structured second-level cache entries: disabled
+19:54:57.236 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Second-level cache direct-reference entries: disabled
+19:54:57.237 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Automatic eviction of collection cache: disabled
+19:54:57.237 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- JDBC batch size: 15
+19:54:57.243 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- JDBC batch updates for versioned data: enabled
+19:54:57.245 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Scrollable result sets: enabled
+19:54:57.246 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Wrap result sets: disabled
+19:54:57.247 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- JDBC3 getGeneratedKeys(): enabled
+19:54:57.247 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- JDBC result set fetch size: null
+19:54:57.248 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Connection release mode: AFTER_TRANSACTION
+19:54:57.248 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- Generate SQL with comments: disabled
+19:54:57.264 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- JPA compliance - query : disabled
+19:54:57.265 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- JPA compliance - closed-handling : disabled
+19:54:57.267 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- JPA compliance - lists : disabled
+19:54:57.269 [main] DEBUG org.hibernate.cfg.Settings - [<init>]
+				- JPA compliance - transactions : disabled
+19:54:57.901 [main] DEBUG o.h.s.i.SessionFactoryServiceRegistryImpl - [getService]
+				- EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+19:54:57.904 [main] DEBUG o.h.s.i.SessionFactoryServiceRegistryImpl - [getService]
+				- EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+19:54:57.970 [main] DEBUG o.h.internal.SessionFactoryImpl - [<init>]
+				- Session factory constructed with filter configurations : {}
+19:54:57.973 [main] DEBUG o.h.internal.SessionFactoryImpl - [<init>]
+				- Instantiating session factory with properties: {hibernate.format_sql=true, java.specification.version=17, sun.cpu.isalist=amd64, hibernate.c3p0.idle_test_period=3000, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.MySQL5Dialect, hibernate.c3p0.min_size=5, java.class.path=C:\Users\Carlo\OneDrive\Desktop\hibernate-t3-carloscl\target\classes;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\annotations-api.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\catalina-ant.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\catalina-ha.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\catalina-ssi.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\catalina-storeconfig.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\catalina-tribes.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\catalina.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\ecj-4.27.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\el-api.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\jakartaee-migration-1.0.6-shaded.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\jasper-el.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\jasper.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\jaspic-api.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\jsp-api.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\servlet-api.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-api.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-coyote.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-dbcp.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-i18n-cs.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-i18n-de.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-i18n-es.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-i18n-fr.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-i18n-ja.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-i18n-ko.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-i18n-pt-BR.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-i18n-ru.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-i18n-zh-CN.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-jdbc.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-jni.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-util-scan.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-util.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\tomcat-websocket.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\websocket-api.jar;C:\Users\Carlo\OneDrive\Desktop\DAW2\Apac he\apache-tomcat-10.1.8\lib\websocket-client-api.jar;C:\Users\Carlo\OneDrive\Desktop\hibernate-t3-carloscl\src\main\webapp\WEB-INF\lib\jakarta.servlet.jsp.jstl-2.0.0.jar;C:\Users\Carlo\OneDrive\Desktop\hibernate-t3-carloscl\src\main\webapp\WEB-INF\lib\jakarta.servlet.jsp.jstl-api-2.0.0.jar;C:\DEV\CORE\APACHE\localRepository\org\slf4j\slf4j-api\2.0.6\slf4j-api-2.0.6.jar;C:\DEV\CORE\APACHE\localRepository\ch\qos\logback\logback-classic\1.4.5\logback-classic-1.4.5.jar;C:\DEV\CORE\APACHE\localRepository\ch\qos\logback\logback-core\1.4.5\logback-core-1.4.5.jar;C:\DEV\CORE\APACHE\localRepository\mysql\mysql-connector-java\8.0.23\mysql-connector-java-8.0.23.jar;C:\DEV\CORE\APACHE\localRepository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\DEV\CORE\APACHE\localRepository\com\github\javafaker\javafaker\1.0.2\javafaker-1.0.2.jar;C:\DEV\CORE\APACHE\localRepository\org\yaml\snakeyaml\1.23\snakeyaml-1.23-android.jar;C:\DEV\CORE\APACHE\localRepository\com\github\mifmif\generex\1.0.2\generex-1.0.2.jar;C:\DEV\CORE\APACHE\localRepository\dk\brics\automaton\automaton\1.11-8\automaton-1.11-8.jar;C:\DEV\CORE\APACHE\localRepository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\DEV\CORE\APACHE\localRepository\org\hibernate\hibernate-core\5.5.3.Final\hibernate-core-5.5.3.Final.jar;C:\DEV\CORE\APACHE\localRepository\org\jboss\logging\jboss-logging\3.4.2.Final\jboss-logging-3.4.2.Final.jar;C:\DEV\CORE\APACHE\localRepository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\DEV\CORE\APACHE\localRepository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\DEV\CORE\APACHE\localRepository\net\bytebuddy\byte-buddy\1.10.22\byte-buddy-1.10.22.jar;C:\DEV\CORE\APACHE\localRepository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\DEV\CORE\APACHE\localRepository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\DEV\CORE\APACHE\localRepository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\DEV\CORE\APACHE\localRepository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\DEV\CORE\APACHE\localRepository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\DEV\CORE\APACHE\localRepository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\DEV\CORE\APACHE\localRepository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\DEV\CORE\APACHE\localRepository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\DEV\CORE\APACHE\localRepository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\DEV\CORE\APACHE\localRepository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\DEV\CORE\APACHE\localRepository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\DEV\CORE\APACHE\localRepository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\DEV\CORE\APACHE\localRepository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;C:\DEV\CORE\APACHE\localRepository\org\hibernate\hibernate-c3p0\5.5.3.Final\hibernate-c3p0-5.5.3.Final.jar;C:\DEV\CORE\APACHE\localRepository\com\mchange\c3p0\0.9.5.5\c3p0-0.9.5.5.jar;C:\DEV\CORE\APACHE\localRepository\com\mchange\mchange-commons-java\0.2.19\mchange-commons-java-0.2.19.jar;C:\DEV\CORE\APACHE\localRepository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\DEV\CORE\APACHE\localRepository\jakarta\servlet\jakarta.servlet-api\6.0.0\jakarta.servlet-api-6.0.0.jar, java.vm.vendor=Eclipse Adoptium, sun.arch.data.model=64, user.variant=, java.vendor.url=https://adoptium.net/, user.timezone=Europe/Madrid, java.vm.specification.version=17, os.name=Windows 10, sun.java.launcher=SUN_STANDARD, user.country=ES, sun.boot.library.path=C:\DEV\IDE\eclipse\ECLIPSE_202306\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin, sun.java.command=com.fpdual.hibernate.App, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Carlo, hibernate.c3p0.max_statements=50, user.language=es, java.specification.vendor=Oracle Corporation, java.version.date=2023-04-18, java.home=C:\DEV\IDE\eclipse\ECLIPSE_202306\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre, file.separator=\, java.vm.compressedOopsMode=32-bit, line.separator=
+, hibernate.c3p0.timeout=300, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, hibernate.c3p0.max_size=20, java.runtime.version=17.0.7+7, user.name=Carlo, path.separator=;, hibernate.connection.username=****, os.version=10.0, java.runtime.name=OpenJDK Runtime Environment, hibernate.connection.url=jdbc:mysql://localhost:3306/FPDUAL_HIBERNATE_MYSQL_T3?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true, file.encoding=UTF-8, java.vm.name=OpenJDK 64-Bit Server VM, hibernate.show_sql=true, java.vendor.version=Temurin-17.0.7+7, hibernate.connection.driver_class=com.mysql.cj.jdbc.Driver, java.vendor.url.bug=https://github.com/adoptium/adoptium-support/issues, java.io.tmpdir=C:\Users\Carlo\AppData\Local\Temp\, java.version=17.0.7, user.dir=C:\Users\Carlo\OneDrive\Desktop\hibernate-t3-carloscl, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, hibernate.connection.password=****, sun.os.patch.level=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@518bfd90, native.encoding=Cp1252, java.library.path=C:\DEV\IDE\eclipse\ECLIPSE_202306\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/DEV/IDE/eclipse/ECLIPSE_202306/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502/jre/bin/server;C:/DEV/IDE/eclipse/ECLIPSE_202306/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502/jre/bin;C:\DEV\CORE\JDK\version\17\jdk-17.0.8\bin;C:\DEV\BDDD\ORACLE\21c\dbhomeXE\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\DEV\CORE\APACHE\apache-maven-3.9.0;C:\DEV\CORE\SVC\GIT\Git\cmd;C:\Python311\Scripts\;C:\Python311\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\OpenSSL-Win64;C:\DEV\CORE\JDK\version\17\jdk-17.0.8\bin;C:\DEV\CORE\APACHE\apache-maven-3.9.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Carlo\AppData\Local\Microsoft\WindowsApps;C:\Users\Carlo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Carlo\AppData\Local\GitHubDesktop\bin;C:\Users\Carlo\AppData\Roaming\npm;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2.5\bin;;C:\Program Files\OpenSSL-Win64;;C:\DEV\IDE\eclipse\ECLIPSE_202306\eclipse;;., java.vendor=Eclipse Adoptium, java.vm.info=mixed mode, java.vm.version=17.0.7+7, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, java.class.version=61.0}
+19:54:58.089 [main] DEBUG o.h.c.b.TypeSafeActivator - [activate]
+				- Unable to acquire Bean Validation ValidatorFactory, skipping activation
+19:54:58.090 [main] DEBUG o.h.secure.spi.JaccIntegrator - [doIntegration]
+				- Skipping JACC integration as it was not enabled
+19:54:58.097 [main] DEBUG o.h.internal.SessionFactoryImpl - [<init>]
+				- Instantiated session factory
+19:54:58.098 [main] DEBUG o.h.t.s.TypeConfiguration$Scope - [scope]
+				- Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@2add4d24] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@272ce069]
+19:54:58.469 [main] DEBUG o.h.orm.bytecode.interceptor - [includeInBaseFetchGroup]
+				- To-one property `com.fpdual.hibernate.persistence.Contract#client` was mapped with LAZY + NO_PROXY but the class was not enhanced
+19:54:58.477 [main] DEBUG o.h.orm.bytecode.interceptor - [includeInBaseFetchGroup]
+				- To-one property `com.fpdual.hibernate.persistence.Contract#client` was mapped with LAZY + NO_PROXY but the class was not enhanced
+19:54:58.478 [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - [classForName]
+				- Not known whether passed class name [com.fpdual.hibernate.persistence.Contract] is safe
+19:54:58.479 [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - [classForName]
+				- No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.fpdual.hibernate.persistence.Contract
+19:54:59.680 [main] DEBUG o.h.orm.bytecode.interceptor - [includeInBaseFetchGroup]
+				- To-one property `com.fpdual.hibernate.persistence.Contract#client` was mapped with LAZY + NO_PROXY but the class was not enhanced
+19:54:59.688 [main] DEBUG o.h.orm.bytecode.interceptor - [includeInBaseFetchGroup]
+				- To-one property `com.fpdual.hibernate.persistence.Contract#client` was mapped with LAZY + NO_PROXY but the class was not enhanced
+19:54:59.711 [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - [classForName]
+				- Not known whether passed class name [com.fpdual.hibernate.persistence.Client] is safe
+19:54:59.712 [main] DEBUG o.h.b.i.ClassLoaderAccessImpl - [classForName]
+				- No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.fpdual.hibernate.persistence.Client
+19:54:59.958 [main] DEBUG o.h.p.c.AbstractCollectionPersister - [logStaticSQL]
+				- Static SQL for collection: com.fpdual.hibernate.persistence.Client.contracts
+19:54:59.959 [main] DEBUG o.h.p.c.AbstractCollectionPersister - [logStaticSQL]
+				-  Row insert: update FPDUAL_HEX_CONTRACT set FK_CLIENT_ID=? where CONTRACT_ID=?
+19:54:59.959 [main] DEBUG o.h.p.c.AbstractCollectionPersister - [logStaticSQL]
+				-  Row update: update FPDUAL_HEX_CONTRACT set  where CONTRACT_ID=?
+19:54:59.959 [main] DEBUG o.h.p.c.AbstractCollectionPersister - [logStaticSQL]
+				-  Row delete: update FPDUAL_HEX_CONTRACT set FK_CLIENT_ID=null where FK_CLIENT_ID=? and CONTRACT_ID=?
+19:54:59.959 [main] DEBUG o.h.p.c.AbstractCollectionPersister - [logStaticSQL]
+				-  One-shot delete: update FPDUAL_HEX_CONTRACT set FK_CLIENT_ID=null where FK_CLIENT_ID=?
+19:55:00.035 [main] DEBUG o.h.p.e.AbstractEntityPersister - [logStaticSQL]
+				- Static SQL for entity: com.fpdual.hibernate.persistence.Contract
+19:55:00.036 [main] DEBUG o.h.p.e.AbstractEntityPersister - [logStaticSQL]
+				-  Version select: select CONTRACT_ID from FPDUAL_HEX_CONTRACT where CONTRACT_ID =?
+19:55:00.037 [main] DEBUG o.h.p.e.AbstractEntityPersister - [logStaticSQL]
+				-  Snapshot select: select contract_.CONTRACT_ID, contract_.AUDIT_UPDATED_DATE as audit_up2_1_, contract_.AUDIT_UPDATED_USER as audit_up3_1_, contract_.FK_CLIENT_ID as fk_clien7_1_, contract_.EXPIRATION_DATE as expirati4_1_, contract_.MONTHLY_PRICE as monthly_5_1_, contract_.VIGENCY_DATE as vigency_6_1_ from FPDUAL_HEX_CONTRACT contract_ where contract_.CONTRACT_ID=?
+19:55:00.037 [main] DEBUG o.h.p.e.AbstractEntityPersister - [debugf]
+				-  Insert 0: insert into FPDUAL_HEX_CONTRACT (AUDIT_UPDATED_DATE, AUDIT_UPDATED_USER, FK_CLIENT_ID, EXPIRATION_DATE, MONTHLY_PRICE, VIGENCY_DATE, CONTRACT_ID) values (?, ?, ?, ?, ?, ?, ?)
+19:55:00.133 [main] DEBUG o.h.p.e.AbstractEntityPersister - [debugf]
+				-  Update 0: update FPDUAL_HEX_CONTRACT set AUDIT_UPDATED_DATE=?, AUDIT_UPDATED_USER=?, FK_CLIENT_ID=?, EXPIRATION_DATE=?, MONTHLY_PRICE=?, VIGENCY_DATE=? where CONTRACT_ID=?
+19:55:00.134 [main] DEBUG o.h.p.e.AbstractEntityPersister - [debugf]
+				-  Delete 0: delete from FPDUAL_HEX_CONTRACT where CONTRACT_ID=?
+19:55:00.134 [main] DEBUG o.h.p.e.AbstractEntityPersister - [logStaticSQL]
+				-  Identity insert: insert into FPDUAL_HEX_CONTRACT (AUDIT_UPDATED_DATE, AUDIT_UPDATED_USER, FK_CLIENT_ID, EXPIRATION_DATE, MONTHLY_PRICE, VIGENCY_DATE) values (?, ?, ?, ?, ?, ?)
+19:55:00.264 [main] DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - [registerQuerySpace]
+				- Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@252744a1]
+19:55:00.268 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : updatedDate
+19:55:00.269 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : updatedUser
+19:55:00.270 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : client
+19:55:00.285 [main] DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - [registerQuerySpace]
+				- Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@718f805a]
+19:55:00.291 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : client.updatedDate
+19:55:00.291 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : client.updatedUser
+19:55:00.292 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : client.contracts
+19:55:00.293 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Property path deemed to be circular : client.contracts
+19:55:00.297 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : client.firstName
+19:55:00.298 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : client.identityDocument
+19:55:00.299 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : client.lastName
+19:55:00.300 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : client.secondLastName
+19:55:00.301 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : endDate
+19:55:00.302 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : monthlyPrice
+19:55:00.303 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : startDate
+19:55:00.304 [main] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - [buildLoadPlan]
+				- Building LoadPlan...
+19:55:00.364 [main] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - [processQuerySpaceJoins]
+				- processing queryspace <gen:0>
+19:55:00.384 [main] DEBUG o.h.l.p.b.s.LoadPlanTreePrinter - [logTree]
+				- LoadPlan(entity=com.fpdual.hibernate.persistence.Contract)
+    - Returns
+       - EntityReturnImpl(entity=com.fpdual.hibernate.persistence.Contract, querySpaceUid=<gen:0>, path=com.fpdual.hibernate.persistence.Contract)
+          - EntityAttributeFetchImpl(entity=com.fpdual.hibernate.persistence.Client, querySpaceUid=<gen:1>, path=com.fpdual.hibernate.persistence.Contract.client)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.fpdual.hibernate.persistence.Contract)
+          - SQL table alias mapping - contract0_
+          - alias suffix - 0_
+          - suffixed key columns - {contract1_1_0_}
+          - JOIN (JoinDefinedByMetadata(client)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.fpdual.hibernate.persistence.Client)
+                - SQL table alias mapping - client1_
+                - alias suffix - 1_
+                - suffixed key columns - {client_i1_0_1_}
+
+19:55:00.394 [main] DEBUG o.h.l.entity.plan.EntityLoader - [<init>]
+				- Static select for entity com.fpdual.hibernate.persistence.Contract [NONE]: select contract0_.CONTRACT_ID as contract1_1_0_, contract0_.AUDIT_UPDATED_DATE as audit_up2_1_0_, contract0_.AUDIT_UPDATED_USER as audit_up3_1_0_, contract0_.FK_CLIENT_ID as fk_clien7_1_0_, contract0_.EXPIRATION_DATE as expirati4_1_0_, contract0_.MONTHLY_PRICE as monthly_5_1_0_, contract0_.VIGENCY_DATE as vigency_6_1_0_, client1_.CLIENT_ID as client_i1_0_1_, client1_.AUDIT_UPDATED_DATE as audit_up2_0_1_, client1_.AUDIT_UPDATED_USER as audit_up3_0_1_, client1_.FIRST_NAME as first_na4_0_1_, client1_.IDENTITY_DOCUMENT as identity5_0_1_, client1_.LAST_NAME as last_nam6_0_1_, client1_.SECOND_LAST_NAME as second_l7_0_1_ from FPDUAL_HEX_CONTRACT contract0_ left outer join FPDUAL_HEX_CLIENT client1_ on contract0_.FK_CLIENT_ID=client1_.CLIENT_ID where contract0_.CONTRACT_ID=?
+19:55:00.396 [main] DEBUG o.h.p.e.AbstractEntityPersister - [logStaticSQL]
+				- Static SQL for entity: com.fpdual.hibernate.persistence.Client
+19:55:00.397 [main] DEBUG o.h.p.e.AbstractEntityPersister - [logStaticSQL]
+				-  Version select: select CLIENT_ID from FPDUAL_HEX_CLIENT where CLIENT_ID =?
+19:55:00.397 [main] DEBUG o.h.p.e.AbstractEntityPersister - [logStaticSQL]
+				-  Snapshot select: select client_.CLIENT_ID, client_.AUDIT_UPDATED_DATE as audit_up2_0_, client_.AUDIT_UPDATED_USER as audit_up3_0_, client_.FIRST_NAME as first_na4_0_, client_.IDENTITY_DOCUMENT as identity5_0_, client_.LAST_NAME as last_nam6_0_, client_.SECOND_LAST_NAME as second_l7_0_ from FPDUAL_HEX_CLIENT client_ where client_.CLIENT_ID=?
+19:55:00.398 [main] DEBUG o.h.p.e.AbstractEntityPersister - [debugf]
+				-  Insert 0: insert into FPDUAL_HEX_CLIENT (AUDIT_UPDATED_DATE, AUDIT_UPDATED_USER, FIRST_NAME, IDENTITY_DOCUMENT, LAST_NAME, SECOND_LAST_NAME, CLIENT_ID) values (?, ?, ?, ?, ?, ?, ?)
+19:55:00.401 [main] DEBUG o.h.p.e.AbstractEntityPersister - [debugf]
+				-  Update 0: update FPDUAL_HEX_CLIENT set AUDIT_UPDATED_DATE=?, AUDIT_UPDATED_USER=?, FIRST_NAME=?, IDENTITY_DOCUMENT=?, LAST_NAME=?, SECOND_LAST_NAME=? where CLIENT_ID=?
+19:55:00.409 [main] DEBUG o.h.p.e.AbstractEntityPersister - [debugf]
+				-  Delete 0: delete from FPDUAL_HEX_CLIENT where CLIENT_ID=?
+19:55:00.410 [main] DEBUG o.h.p.e.AbstractEntityPersister - [logStaticSQL]
+				-  Identity insert: insert into FPDUAL_HEX_CLIENT (AUDIT_UPDATED_DATE, AUDIT_UPDATED_USER, FIRST_NAME, IDENTITY_DOCUMENT, LAST_NAME, SECOND_LAST_NAME) values (?, ?, ?, ?, ?, ?)
+19:55:00.410 [main] DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - [registerQuerySpace]
+				- Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7c0f28f8]
+19:55:00.413 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : updatedDate
+19:55:00.414 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : updatedUser
+19:55:00.414 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : contracts
+19:55:00.416 [main] DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - [registerQuerySpace]
+				- Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@5e230fc6]
+19:55:00.433 [main] DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - [registerQuerySpace]
+				- Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@546394ed]
+19:55:00.436 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : firstName
+19:55:00.437 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : identityDocument
+19:55:00.437 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : lastName
+19:55:00.438 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : secondLastName
+19:55:00.439 [main] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - [buildLoadPlan]
+				- Building LoadPlan...
+19:55:00.442 [main] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - [processQuerySpaceJoins]
+				- processing queryspace <gen:0>
+19:55:00.444 [main] DEBUG o.h.l.p.b.s.LoadPlanTreePrinter - [logTree]
+				- LoadPlan(entity=com.fpdual.hibernate.persistence.Client)
+    - Returns
+       - EntityReturnImpl(entity=com.fpdual.hibernate.persistence.Client, querySpaceUid=<gen:0>, path=com.fpdual.hibernate.persistence.Client)
+          - CollectionAttributeFetchImpl(collection=com.fpdual.hibernate.persistence.Client.contracts, querySpaceUid=<gen:1>, path=com.fpdual.hibernate.persistence.Client.contracts)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.fpdual.hibernate.persistence.Contract, querySpaceUid=<gen:2>, path=com.fpdual.hibernate.persistence.Client.contracts.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.fpdual.hibernate.persistence.Client)
+          - SQL table alias mapping - client0_
+          - alias suffix - 0_
+          - suffixed key columns - {client_i1_0_0_}
+
+19:55:00.444 [main] DEBUG o.h.l.entity.plan.EntityLoader - [<init>]
+				- Static select for entity com.fpdual.hibernate.persistence.Client [NONE]: select client0_.CLIENT_ID as client_i1_0_0_, client0_.AUDIT_UPDATED_DATE as audit_up2_0_0_, client0_.AUDIT_UPDATED_USER as audit_up3_0_0_, client0_.FIRST_NAME as first_na4_0_0_, client0_.IDENTITY_DOCUMENT as identity5_0_0_, client0_.LAST_NAME as last_nam6_0_0_, client0_.SECOND_LAST_NAME as second_l7_0_0_ from FPDUAL_HEX_CLIENT client0_ where client0_.CLIENT_ID=?
+19:55:00.472 [main] DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - [registerQuerySpace]
+				- Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@716185fe]
+19:55:00.473 [main] DEBUG o.h.l.p.b.i.s.QuerySpacesImpl - [registerQuerySpace]
+				- Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@628b819d]
+19:55:00.477 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : updatedDate
+19:55:00.478 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : updatedUser
+19:55:00.480 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : client
+19:55:00.480 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Property path deemed to be circular : client
+19:55:00.484 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : endDate
+19:55:00.485 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : monthlyPrice
+19:55:00.486 [main] DEBUG o.h.p.w.spi.MetamodelGraphWalker - [visitAttributeDefinition]
+				- Visiting attribute path : startDate
+19:55:00.487 [main] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - [buildLoadPlan]
+				- Building LoadPlan...
+19:55:00.502 [main] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - [processQuerySpaceJoins]
+				- processing queryspace <gen:0>
+19:55:00.506 [main] DEBUG o.h.l.p.b.s.LoadPlanTreePrinter - [logTree]
+				- LoadPlan(collection=com.fpdual.hibernate.persistence.Client.contracts)
+    - Returns
+       - CollectionReturnImpl(collection=com.fpdual.hibernate.persistence.Client.contracts, querySpaceUid=<gen:0>, path=[com.fpdual.hibernate.persistence.Client.contracts])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.fpdual.hibernate.persistence.Contract, querySpaceUid=<gen:1>, path=[com.fpdual.hibernate.persistence.Client.contracts].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.fpdual.hibernate.persistence.Client.contracts)
+          - SQL table alias mapping - contracts0_
+          - alias suffix - 0_
+          - suffixed key columns - {fk_clien7_1_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - contract1_1_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.fpdual.hibernate.persistence.Contract)
+                - SQL table alias mapping - contracts0_
+                - alias suffix - 1_
+                - suffixed key columns - {contract1_1_1_}
+
+19:55:00.515 [main] DEBUG o.h.l.c.plan.CollectionLoader - [<init>]
+				- Static select for collection com.fpdual.hibernate.persistence.Client.contracts: select contracts0_.FK_CLIENT_ID as fk_clien7_1_0_, contracts0_.CONTRACT_ID as contract1_1_0_, contracts0_.CONTRACT_ID as contract1_1_1_, contracts0_.AUDIT_UPDATED_DATE as audit_up2_1_1_, contracts0_.AUDIT_UPDATED_USER as audit_up3_1_1_, contracts0_.FK_CLIENT_ID as fk_clien7_1_1_, contracts0_.EXPIRATION_DATE as expirati4_1_1_, contracts0_.MONTHLY_PRICE as monthly_5_1_1_, contracts0_.VIGENCY_DATE as vigency_6_1_1_ from FPDUAL_HEX_CONTRACT contracts0_ where contracts0_.FK_CLIENT_ID=?
+19:55:00.678 [main] DEBUG o.h.t.s.s.SchemaManagementToolCoordinator - [process]
+				- No actions specified; doing nothing
+19:55:00.679 [main] DEBUG o.h.e.t.j.p.i.JtaPlatformInitiator - [initiateService]
+				- No JtaPlatform was specified, checking resolver
+19:55:00.681 [main] DEBUG o.h.e.t.j.p.i.JtaPlatformResolverInitiator - [initiateService]
+				- No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+19:55:00.704 [main] DEBUG o.h.e.t.j.p.i.StandardJtaPlatformResolver - [resolveJtaPlatform]
+				- Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+19:55:00.706 [main] INFO o.h.e.t.j.p.i.JtaPlatformInitiator - [initiateService]
+				- HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+19:55:00.710 [main] DEBUG o.h.q.spi.NamedQueryRepository - [checkNamedQueries]
+				- Checking 0 named HQL queries
+19:55:00.714 [main] DEBUG o.h.q.spi.NamedQueryRepository - [checkNamedQueries]
+				- Checking 0 named SQL queries
+19:55:00.737 [main] DEBUG o.h.s.i.SessionFactoryServiceRegistryImpl - [getService]
+				- EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+19:55:00.760 [main] DEBUG o.h.i.SessionFactoryRegistry - [<init>]
+				- Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@1775c4e7
+19:55:00.766 [main] DEBUG o.h.i.SessionFactoryRegistry - [addSessionFactory]
+				- Registering SessionFactory: 67455b08-bdf7-4f30-be6f-90c8c84f37cf (<unnamed>)
+19:55:00.767 [main] DEBUG o.h.i.SessionFactoryRegistry - [addSessionFactory]
+				- Not binding SessionFactory to JNDI, no JNDI name configured
+19:55:00.768 [main] INFO com.fpdual.hibernate.App - [log]
+				- SessionFactory creado con éxito.
+19:55:01.029 [main] DEBUG o.h.s.i.StatisticsInitiator - [initiateServiceInternal]
+				- Statistics initialized [enabled=false]
+19:55:01.060 [main] DEBUG o.h.e.t.internal.TransactionImpl - [<init>]
+				- On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+19:55:01.061 [main] DEBUG o.h.e.t.internal.TransactionImpl - [begin]
+				- begin
+19:55:01.163 [main] DEBUG o.h.q.c.i.CriteriaQueryImpl - [interpret]
+				- Rendered criteria query -> select generatedAlias0 from Client as generatedAlias0 where generatedAlias0.firstName=:param0
+19:55:01.212 [main] DEBUG o.h.h.i.QueryTranslatorFactoryInitiator - [initiateService]
+				- QueryTranslatorFactory: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@2eb60c71
+19:55:01.308 [main] DEBUG o.h.h.i.ast.QueryTranslatorImpl - [parse]
+				- parse() - HQL: select generatedAlias0 from com.fpdual.hibernate.persistence.Client as generatedAlias0 where generatedAlias0.firstName=:param0
+19:55:01.330 [main] DEBUG o.h.h.internal.ast.ErrorTracker - [throwQueryException]
+				- throwQueryException() : no errors
+19:55:01.371 [main] DEBUG o.h.h.i.ast.QueryTranslatorImpl - [showHqlAst]
+				- --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[DOT] Node: '.'
+    |  |     |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  |  +-[IDENT] Node: 'com'
+    |  |     |  |  |  |  \-[IDENT] Node: 'fpdual'
+    |  |     |  |  |  \-[IDENT] Node: 'hibernate'
+    |  |     |  |  \-[IDENT] Node: 'persistence'
+    |  |     |  \-[IDENT] Node: 'Client'
+    |  |     \-[ALIAS] Node: 'generatedAlias0'
+    |  \-[SELECT] Node: 'select'
+    |     \-[IDENT] Node: 'generatedAlias0'
+    \-[WHERE] Node: 'where'
+       \-[EQ] Node: '='
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'generatedAlias0'
+          |  \-[IDENT] Node: 'firstName'
+          \-[COLON] Node: ':'
+             \-[IDENT] Node: 'param0'
+
+19:55:01.433 [main] DEBUG o.h.h.i.antlr.HqlSqlBaseWalker - [beforeStatement]
+				- select << begin [level=1, statement=select]
+19:55:01.486 [main] DEBUG o.h.h.i.ast.tree.FromElement - [doInitialize]
+				- FromClause{level=1} : com.fpdual.hibernate.persistence.Client (generatedAlias0) -> client0_
+19:55:01.489 [main] DEBUG o.h.h.i.a.tree.FromReferenceNode - [setResolved]
+				- Resolved : generatedAlias0 -> client0_.CLIENT_ID
+19:55:01.500 [main] DEBUG o.h.h.i.a.tree.FromReferenceNode - [setResolved]
+				- Resolved : generatedAlias0 -> client0_.CLIENT_ID
+19:55:01.505 [main] DEBUG o.h.h.internal.ast.tree.DotNode - [getDataType]
+				- getDataType() : firstName -> org.hibernate.type.StringType@e041f0c
+19:55:01.507 [main] DEBUG o.h.h.i.a.tree.FromReferenceNode - [setResolved]
+				- Resolved : generatedAlias0.firstName -> client0_.FIRST_NAME
+19:55:01.517 [main] DEBUG o.h.h.i.antlr.HqlSqlBaseWalker - [beforeStatementCompletion]
+				- select : finishing up [level=1, statement=select]
+19:55:01.529 [main] DEBUG o.h.h.internal.ast.HqlSqlWalker - [processQuery]
+				- processQuery() :  ( SELECT ( {select clause} client0_.CLIENT_ID ) ( FromClause{level=1} FPDUAL_HEX_CLIENT client0_ ) ( where ( = ( client0_.FIRST_NAME client0_.CLIENT_ID firstName ) ? ) ) )
+19:55:01.563 [main] DEBUG o.h.h.i.ast.util.JoinProcessor - [findQueryReferencedTables]
+				- Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    | referencedTables(entity Client): [FPDUAL_HEX_CLIENT]
+    |  +-IdentNode
+    |  | persister: SingleTableEntityPersister(com.fpdual.hibernate.persistence.Client)
+    |  | originalText: generatedAlias0
+    |  \-SqlFragment
+    +-FromClause
+    |  \-FromElement
+    \-SqlNode
+       \-BinaryLogicOperatorNode
+          +-DotNode
+          | persister: SingleTableEntityPersister(com.fpdual.hibernate.persistence.Client)
+          | path: generatedAlias0.firstName
+          |  +-IdentNode
+          |  | persister: SingleTableEntityPersister(com.fpdual.hibernate.persistence.Client)
+          |  | originalText: generatedAlias0
+          |  \-IdentNode
+          |    persister: null
+          |    originalText: firstName
+          \-ParameterNode
+
+19:55:01.573 [main] DEBUG o.h.h.i.ast.util.JoinProcessor - [addJoinNodes]
+				- Using FROM fragment [FPDUAL_HEX_CLIENT client0_]
+19:55:01.576 [main] DEBUG o.h.h.i.antlr.HqlSqlBaseWalker - [afterStatementCompletion]
+				- select >> end [level=1, statement=select]
+19:55:01.578 [main] DEBUG o.h.h.i.ast.QueryTranslatorImpl - [analyze]
+				- --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (FPDUAL_HEX_CLIENT)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'client0_.CLIENT_ID as client_i1_0_' {alias=generatedAlias0, className=com.fpdual.hibernate.persistence.Client, tableAlias=client0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'client0_.AUDIT_UPDATED_DATE as audit_up2_0_, client0_.AUDIT_UPDATED_USER as audit_up3_0_, client0_.FIRST_NAME as first_na4_0_, client0_.IDENTITY_DOCUMENT as identity5_0_, client0_.LAST_NAME as last_nam6_0_, client0_.SECOND_LAST_NAME as second_l7_0_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[generatedAlias0], fromElementByTableAlias=[client0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'FPDUAL_HEX_CLIENT client0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias0,role=null,tableName=FPDUAL_HEX_CLIENT,tableAlias=client0_,origin=null,columns={,className=com.fpdual.hibernate.persistence.Client}}
+    \-[WHERE] SqlNode: 'where'
+       \-[EQ] BinaryLogicOperatorNode: '='
+          +-[DOT] DotNode: 'client0_.FIRST_NAME' {propertyName=firstName,dereferenceType=PRIMITIVE,getPropertyPath=firstName,path=generatedAlias0.firstName,tableAlias=client0_,className=com.fpdual.hibernate.persistence.Client,classAlias=generatedAlias0}
+          |  +-[ALIAS_REF] IdentNode: 'client0_.CLIENT_ID' {alias=generatedAlias0, className=com.fpdual.hibernate.persistence.Client, tableAlias=client0_}
+          |  \-[IDENT] IdentNode: 'firstName' {originalText=firstName}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=param0, expectedType=org.hibernate.type.StringType@e041f0c}
+
+19:55:01.580 [main] DEBUG o.h.h.internal.ast.ErrorTracker - [throwQueryException]
+				- throwQueryException() : no errors
+19:55:01.596 [main] DEBUG o.h.h.i.ast.QueryTranslatorImpl - [generate]
+				- HQL: select generatedAlias0 from com.fpdual.hibernate.persistence.Client as generatedAlias0 where generatedAlias0.firstName=:param0
+19:55:01.600 [main] DEBUG o.h.h.i.ast.QueryTranslatorImpl - [generate]
+				- SQL: select client0_.CLIENT_ID as client_i1_0_, client0_.AUDIT_UPDATED_DATE as audit_up2_0_, client0_.AUDIT_UPDATED_USER as audit_up3_0_, client0_.FIRST_NAME as first_na4_0_, client0_.IDENTITY_DOCUMENT as identity5_0_, client0_.LAST_NAME as last_nam6_0_, client0_.SECOND_LAST_NAME as second_l7_0_ from FPDUAL_HEX_CLIENT client0_ where client0_.FIRST_NAME=?
+19:55:01.601 [main] DEBUG o.h.h.internal.ast.ErrorTracker - [throwQueryException]
+				- throwQueryException() : no errors
+19:55:01.664 [main] DEBUG org.hibernate.SQL - [logStatement]
+				- 
+    select
+        client0_.CLIENT_ID as client_i1_0_,
+        client0_.AUDIT_UPDATED_DATE as audit_up2_0_,
+        client0_.AUDIT_UPDATED_USER as audit_up3_0_,
+        client0_.FIRST_NAME as first_na4_0_,
+        client0_.IDENTITY_DOCUMENT as identity5_0_,
+        client0_.LAST_NAME as last_nam6_0_,
+        client0_.SECOND_LAST_NAME as second_l7_0_ 
+    from
+        FPDUAL_HEX_CLIENT client0_ 
+    where
+        client0_.FIRST_NAME=?
+19:55:01.928 [main] DEBUG org.hibernate.loader.Loader - [debugf]
+				- Result set row: 0
+19:55:01.936 [main] DEBUG org.hibernate.loader.Loader - [getRow]
+				- Result row: EntityKey[com.fpdual.hibernate.persistence.Client#2]
+19:55:01.965 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Resolving attributes for [com.fpdual.hibernate.persistence.Client#2]
+19:55:01.968 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Processing attribute `updatedDate` : value = 2024-01-03 19:41:38.0
+19:55:01.969 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Attribute (`updatedDate`)  - enhanced for lazy-loading? - false
+19:55:01.969 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Processing attribute `updatedUser` : value = LAPTOP-ECK0BP2E
+19:55:01.970 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Attribute (`updatedUser`)  - enhanced for lazy-loading? - false
+19:55:01.971 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Processing attribute `contracts` : value = NOT NULL COLLECTION
+19:55:01.971 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Attribute (`contracts`)  - enhanced for lazy-loading? - false
+19:55:02.000 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Processing attribute `firstName` : value = Caryn
+19:55:02.001 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Attribute (`firstName`)  - enhanced for lazy-loading? - false
+19:55:02.001 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Processing attribute `identityDocument` : value = 95900940S
+19:55:02.017 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Attribute (`identityDocument`)  - enhanced for lazy-loading? - false
+19:55:02.019 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Processing attribute `lastName` : value = Dickinson
+19:55:02.040 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Attribute (`lastName`)  - enhanced for lazy-loading? - false
+19:55:02.042 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Processing attribute `secondLastName` : value = Rosenbaum
+19:55:02.043 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityEntryLoadedState]
+				- Attribute (`secondLastName`)  - enhanced for lazy-loading? - false
+19:55:02.050 [main] DEBUG o.h.engine.internal.TwoPhaseLoad - [initializeEntityFromEntityEntryLoadedState]
+				- Done materializing entity [com.fpdual.hibernate.persistence.Client#2]
+19:55:02.076 [main] INFO com.fpdual.hibernate.App - [log]
+				- Realizando consulta para buscar clientes por nombre.
+19:55:02.078 [main] INFO com.fpdual.hibernate.App - [log]
+				- Número de clientes encontrados: 1
+19:55:02.080 [main] DEBUG o.h.e.t.internal.TransactionImpl - [commit]
+				- committing
+19:55:02.092 [main] DEBUG o.h.e.i.AbstractFlushingEventListener - [prepareEntityFlushes]
+				- Processing flush-time cascades
+19:55:02.117 [main] DEBUG o.h.e.i.AbstractFlushingEventListener - [prepareCollectionFlushes]
+				- Dirty checking collections
+19:55:02.164 [main] DEBUG o.h.engine.internal.Collections - [processReachableCollection]
+				- Collection found: [com.fpdual.hibernate.persistence.Client.contracts#2], was: [com.fpdual.hibernate.persistence.Client.contracts#2] (uninitialized)
+19:55:02.176 [main] DEBUG o.h.e.i.AbstractFlushingEventListener - [logFlushResults]
+				- Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+19:55:02.177 [main] DEBUG o.h.e.i.AbstractFlushingEventListener - [logFlushResults]
+				- Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+19:55:02.180 [main] DEBUG o.h.internal.util.EntityPrinter - [toString]
+				- Listing entities:
+19:55:02.181 [main] DEBUG o.h.internal.util.EntityPrinter - [toString]
+				- com.fpdual.hibernate.persistence.Client{firstName=Caryn, lastName=Dickinson, secondLastName=Rosenbaum, clientId=2, identityDocument=95900940S, updatedDate=2024-01-03 19:41:38.0, updatedUser=LAPTOP-ECK0BP2E, contracts=<uninitialized>}
+19:55:02.190 [main] DEBUG o.h.r.j.i.LogicalConnectionManagedImpl - [afterTransaction]
+				- Initiating JDBC connection release from afterTransaction
+19:55:02.193 [main] DEBUG o.h.r.j.i.LogicalConnectionManagedImpl - [afterTransaction]
+				- Initiating JDBC connection release from afterTransaction

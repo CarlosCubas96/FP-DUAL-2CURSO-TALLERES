@@ -34,11 +34,11 @@ public class ClientDaoImpl extends CommonDaoImpl<Client> implements ClientDaoI {
 
 	/**
 	 * Busca clientes por nombre y apellidos.
-	 * 
+	 *
 	 * @param firstName      El nombre del cliente.
 	 * @param lastName       El primer apellido del cliente.
 	 * @param secondLastName El segundo apellido del cliente.
-	 * @return Lista de clientes que coinciden con los parámetros dados.
+	 * @return Lista de clientes que coinciden con alguno de los parámetros dados.
 	 */
 	@Override
 	public List<Client> searchByNameAndLastName(String firstName, String lastName, String secondLastName) {
@@ -48,14 +48,15 @@ public class ClientDaoImpl extends CommonDaoImpl<Client> implements ClientDaoI {
 		}
 
 		// Consulta HQL para buscar clientes por nombre y apellidos.
-		String hql = "FROM Client c WHERE " + "(:firstName IS NULL OR c.firstName = :firstName) OR "
-				+ "(:lastName IS NULL OR c.lastName = :lastName) OR "
-				+ "(:secondLastName IS NULL OR c.secondLastName = :secondLastName)";
+		String hql = "FROM Client c WHERE "
+				+ "(:firstName IS NULL OR :firstName = '' OR c.firstName LIKE :firstName) OR "
+				+ "(:lastName IS NULL OR :lastName = '' OR c.lastName LIKE :lastName) OR "
+				+ "(:secondLastName IS NULL OR :secondLastName = '' OR c.secondLastName LIKE :secondLastName)";
 
 		Query<Client> query = session.createQuery(hql, Client.class);
-		query.setParameter("firstName", firstName);
-		query.setParameter("lastName", lastName);
-		query.setParameter("secondLastName", secondLastName);
+		query.setParameter("firstName", "%" + firstName + "%");
+		query.setParameter("lastName", "%" + lastName + "%");
+		query.setParameter("secondLastName", "%" + secondLastName + "%");
 
 		// Agregar log para la consulta realizada
 		Utils.log(Utils.INFO, "Realizando consulta para buscar clientes por nombre y apellidos.");

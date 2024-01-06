@@ -57,28 +57,10 @@ public class SearchClientServlet extends HttpServlet {
 			// Obtener el parámetro de búsqueda del formulario
 			String searchKeyword = request.getParameter("searchKeyword");
 
-			// Dividir la cadena en nombre, primer apellido y segundo apellido
-			String[] searchTerms = searchKeyword.split("\\s+");
-
-			// Inicializar los valores para la búsqueda
-			String firstName = "";
-			String lastName = "";
-			String secondLastName = "";
-
-			// Asignar los valores correspondientes
-			if (searchTerms.length > 0) {
-				firstName = searchTerms[0].trim();
-			}
-			if (searchTerms.length > 1) {
-				lastName = searchTerms[1].trim();
-			}
-			if (searchTerms.length > 2) {
-				secondLastName = searchTerms[2].trim();
-			}
-
 			// Realizar la búsqueda en el servicio de gestión de clientes
 			ClientManagementServiceImpl clientService = new ClientManagementServiceImpl(session);
-			List<Client> searchResults = clientService.searchByNameAndLastName(firstName, lastName, secondLastName);
+			List<Client> searchResults = clientService.searchByNameAndLastName(searchKeyword, searchKeyword,
+					searchKeyword);
 
 			// Guardar los resultados en el request
 			request.setAttribute("clients", searchResults);

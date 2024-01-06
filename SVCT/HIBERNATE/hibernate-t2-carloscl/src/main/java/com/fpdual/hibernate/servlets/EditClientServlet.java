@@ -197,7 +197,7 @@ public class EditClientServlet extends HttpServlet {
 						request.setAttribute("clients", clients);
 
 						// Redirigir a la página de listado de clientes
-						request.getRequestDispatcher(Constants.JSP_ERROR_JSP).forward(request, response);
+						request.getRequestDispatcher("JSP/listClients.jsp").forward(request, response);
 
 					} else {
 						// Redirigir a la página de error si la actualización falla

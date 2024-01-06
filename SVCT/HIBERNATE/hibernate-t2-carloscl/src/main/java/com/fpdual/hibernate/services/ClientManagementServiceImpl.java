@@ -165,6 +165,7 @@ public class ClientManagementServiceImpl implements ClientManagementServiceI {
 
 		// Log para la búsqueda de clientes por nombre y apellidos
 		Utils.log(Utils.INFO, "Búsqueda exitosa de clientes por nombre y apellidos");
+		System.out.println(clients);
 
 		return clients;
 	}

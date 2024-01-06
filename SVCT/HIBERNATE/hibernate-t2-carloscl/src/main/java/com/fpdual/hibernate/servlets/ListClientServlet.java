@@ -1,5 +1,6 @@
 package com.fpdual.hibernate.servlets;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -62,18 +63,29 @@ public class ListClientServlet extends HttpServlet {
 			ClientManagementServiceImpl clientService = new ClientManagementServiceImpl(session);
 			ContractManagementServiceImpl contractService = new ContractManagementServiceImpl(session);
 
-			// Se crea una instancia de InitializeData con los servicios necesarios.
-			InitializeData initializeData = new InitializeData(clientService, contractService);
+			// Obtener el contexto de la aplicación
+			ServletContext servletContext = getServletContext();
 
-			/*
-			 * Se verifica si los datos de clientes ya han sido generados, y si no, se
-			 * generan aleatoriamente.
-			 */
-			if (!initializeData.hasGeneratedClients()) {
-				initializeData.generateRandomClients();
-				Utils.log(Utils.INFO, "Datos de clientes generados aleatoriamente.");
-			} else {
-				Utils.log(Utils.INFO, "Los datos de clientes ya han sido generados previamente.");
+			// Obtener la instancia de InitializeData del contexto de la aplicación
+			InitializeData initializeData = (InitializeData) servletContext.getAttribute("initializeData");
+
+			if (initializeData == null) {
+
+				// Si la instancia no está en el contexto de la aplicación, se crea
+				initializeData = new InitializeData(clientService, contractService);
+
+				/*
+				 * Se verifica si los datos de clientes ya han sido generados, y si no, se
+				 * generan aleatoriamente.
+				 */
+				if (!initializeData.hasGeneratedClients()) {
+					initializeData.generateRandomClients();
+					Utils.log(Utils.INFO, "Datos de clientes generados aleatoriamente.");
+				} else {
+					Utils.log(Utils.INFO, "Los datos de clientes ya han sido generados previamente.");
+				}
+
+				servletContext.setAttribute("initializeData", initializeData);
 			}
 
 			// Se obtiene la lista de clientes y se establece como atributo en la solicitud.
@@ -83,6 +95,7 @@ public class ListClientServlet extends HttpServlet {
 			// Se redirige a la página JSP que muestra la lista de clientes.
 			request.getRequestDispatcher("JSP/listClients.jsp").forward(request, response);
 		} catch (Exception e) {
+
 			Utils.log(Utils.ERROR, "Error al procesar la solicitud GET en ListClientServlet: " + e);
 			response.sendRedirect(Constants.JSP_ERROR_JSP);
 		}
